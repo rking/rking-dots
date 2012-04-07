@@ -35,7 +35,7 @@ alias tl='test-less'
 alias tlp='test-less --prove'
 alias dict='/usr/bin/dict -dall'
 kiss() { ~/bin/kiss "$@"; rehash }
-cd() { builtin cd "$@"; screentitle $(basename $(pwd))/; }
+cd() { builtin cd "$@"; ~/bin/screentitle $(basename $(pwd))/; }
 # vim() { /usr/bin/vim "$@"; screentitle $PWD }
 viml='vim !! -l'
 s50() { convert -sample 50% $1 $1 }

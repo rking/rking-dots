@@ -1,5 +1,5 @@
 #!/usr/bin/perl -w
-# Grab a random line from a file.
+# Concatentae lines of a file, in random order, to a comma-separated list.
 use strict;
 my @list = map { chomp; $_ } <STDIN>;
 my @shuffled;
