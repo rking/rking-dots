@@ -2,8 +2,8 @@
 
 So I can sit down at an unconfigured machine, and run:
 
-mkdir src && cd src && \
-    git clone git://github.com/ryanjosephking/config && \
+[[ !-d ~/src ]] && mkdir ~/src \
+    cd $_ && git clone git@github.com:ryanjosephking/config.git && \
     make -C config
 
 ...then it will provide me with a decently synced config. Specifically, it's
