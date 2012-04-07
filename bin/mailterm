@@ -1,0 +1,3 @@
+#!/bin/sh
+# Start a terminal on the left side, used for mail and such.
+xterm -geom 80x51+1+1 -title mailterm -e screen -m -c ~/.mailscreenrc &

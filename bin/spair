@@ -1,0 +1,5 @@
+#!/bin/sh -xe
+# Start a screen session so that a pair programmer can easily connect, too.
+PIDFILE="/tmp/.spair-$1"
+[ -e $PIDFILE ]
+screen -r $1/`<$PIDFILE`

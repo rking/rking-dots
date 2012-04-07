@@ -1,0 +1,5 @@
+#!/bin/sh
+# A favorite. Best defined by its source: touch $1; chmod +x $1; vim $1
+touch $1
+chmod +x $1
+vim $1

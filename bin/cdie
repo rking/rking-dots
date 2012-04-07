@@ -1,0 +1,5 @@
+#!/usr/bin/perl -w
+# Edit a perl-style file.pm:123 token. Saves a moment of paste/edit/enter.
+use strict;
+my ($file, $line) = split ':', $ARGV[0];
+system 'vim', $file, "+$line";

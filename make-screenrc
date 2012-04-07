@@ -1,0 +1,21 @@
+#!/bin/zsh -e
+source ~/.localrc
+OUT=~/.screenrc
+rm -f $OUT 2>&1 >/dev/null || true
+touch $OUT
+[ ! -z "$SCREENCOLOR" ]
+[ ! -z "$SCREENESC" ]
+cat <<EOT >> $OUT
+shell zsh
+defflow off # turn off stupid flow-control (also see: stty -ixon in ~/.zshrc)
+altscreen on # restore window contents after "vim", etc.
+ignorecase on # for searches
+multiuser on
+defmonitor on
+nethack on # nerdy.
+startup_message off # can't live without this one.
+escape ^$SCREENESC$SCREENESC
+# this is crufty looking, but it is a huge usability improvement:
+hardstatus alwayslastline "%{${SCREENCOLOR}w}$SCREENESC: %-Lw%{= ${SCREENCOLOR}w}%50>%n%f* %t%{-}%+Lw%< %>"
+EOT
+[ ! -z "$SCREENEXTRA" ] && echo $SCREENEXTRA >> $OUT || true

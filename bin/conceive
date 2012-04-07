@@ -1,0 +1,6 @@
+#!/bin/sh -e
+# Make a script in ~/src/config/bin/, then install it and add it to the repo.
+cd ~/src/config
+kiss bin/$1
+make
+git add bin/$1

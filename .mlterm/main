@@ -1,0 +1,10 @@
+#daemon_mode=blend
+fade_ratio=90
+fontsize=10
+geometry=80x50
+scrollbar_mode=none
+use_anti_alias=true
+#use_bidi=true
+use_xim=true # XXX - I don't know how to get this to actually work.
+#vertical_mode=cjk
+word_separators="	 ,.;/?!@#$%^&*()=+[]{}<>\\|'\""

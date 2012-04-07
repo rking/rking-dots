@@ -1,0 +1,6 @@
+#!/bin/sh
+# A recursive grep. If you give only one arg it will search '." by default.
+NEEDLE="$1"
+HAYSTACK="$2"
+[ "$HAYSTACK" == "" ] && HAYSTACK=.
+grep --color --exclude-dir=locale --exclude-dir=.svn -r "$NEEDLE" "$HAYSTACK"

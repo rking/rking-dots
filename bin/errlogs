@@ -1,0 +1,3 @@
+#!/bin/sh
+# Colorize the HTTP error logs.
+colorizelogs /var/log/apache*/*error.log

@@ -1,0 +1,3 @@
+#!/bin/sh
+# Visit Wikipedia page in terminal
+links http://en.wikipedia.org/wiki/"$*"

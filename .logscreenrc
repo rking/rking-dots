@@ -1,0 +1,5 @@
+escape ^xx
+screen st www
+split
+focus down
+screen st talc -t screen -c ~/.myerrlogscreenrc

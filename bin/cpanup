@@ -1,0 +1,3 @@
+#!/bin/sh
+# Upload to CPAN with my options
+cpan-upload -mailto rking@panoptic.com -user KING "$@"

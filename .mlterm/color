@@ -1,0 +1,18 @@
+prev_fg    = #DDDDDD
+prev_bg    = #000000
+
+red        = #CC3333
+green      = #009900
+yellow     = #999933
+blue       = #3333CC
+magenta    = #CC33CC
+cyan       = #339999
+white      = #FFFFFF
+
+hl_red        = #CC3333
+hl_green      = #009900
+hl_yellow     = #999933
+hl_blue       = #3333CC
+hl_magenta    = #CC33CC
+hl_cyan       = #339999
+hl_white      = #FFFFFF

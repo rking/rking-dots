@@ -1,0 +1,14 @@
+bindkey -v
+bindkey "^P" vi-up-line-or-history
+bindkey "^N" vi-down-line-or-history
+# voodoo:
+autoload edit-command-line; zle -N edit-command-line
+autoload -U compinit; compinit
+bindkey -M vicmd v edit-command-line
+bindkey '^I' complete-word
+# XXX deprecated way - should be like in zshcompwid(1)
+compctl -/ -g '*~(CVS|.svn)(/)' cd
+compctl -g '*~.svn' vim
+# TODO: localhost:caphusozshrc
+fignore=(.o \~ .old .bak .tmp .swp CVS .svn)
+zmodload zsh/complist

@@ -1,0 +1,27 @@
+XTerm*Font: -misc-fixed-medium-r-semicondensed--13-*-*-*-*-*-iso10646-1
+XTerm*Font2: -efont-fixed-medium-r-normal-*-12-*-*-*-*-*-iso10646-1
+XTerm*Font3: -efont-fixed-medium-r-normal-*-14-*-*-*-*-*-iso10646-1
+XTerm*Font4: -efont-fixed-medium-r-normal-*-16-*-*-*-*-*-iso10646-1
+XTerm*Font5: -misc-fixed-medium-r-normal--18-*-*-*-*-*-iso10646-1
+XTerm*Font6: -efont-fixed-medium-r-normal-*-24-*-*-*-*-*-iso10646-1
+
+XTerm*background:Black
+XTerm*foreground:White
+XTerm*color0:Black
+XTerm*color1:Orange
+XTerm*color2:PaleGreen
+XTerm*color3:LightSkyBlue
+XTerm*color4:LightSlateBlue
+XTerm*color5:Plum
+XTerm*color6:LightSkyBlue
+XTerm*color7:White
+XTerm*color8:Black
+XTerm*color9:Orange
+XTerm*color10:PaleGreen
+XTerm*color11:Yellow
+XTerm*color12:LightSlateBlue
+XTerm*color13:Plum
+XTerm*color14:LightSkyBlue
+XTerm*color15:White
+XTerm*colorBD:Orange
+XTerm*colorUL:PaleGreen

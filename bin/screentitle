@@ -1,0 +1,3 @@
+#!/bin/sh
+# Echo the arguments to the xterm title.
+echo -ne "\ek$@\e\\"

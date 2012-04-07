@@ -1,0 +1,10 @@
+#!/bin/bash
+# List mailboxes for mutt
+echo 'mailboxes \'
+for n in ~/mail/*; do
+    m=$(basename $n)
+    if [ -f $n -a $m != 'sent' ]; then
+        echo "  =$m \\"
+    fi
+done
+echo

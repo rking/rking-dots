@@ -1,0 +1,5 @@
+Just run:
+    mkdir -p ~/.vim/plugins
+
+Then start plunkin' foo.vim files in there - they all get sourced on vim
+startup, and it's much more organized than a big old ~/.vimrc .

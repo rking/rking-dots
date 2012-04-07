@@ -1,0 +1,19 @@
+#!/usr/bin/perl -w
+# Run a remote command, then interact.
+use strict;
+use Expect;
+my $host = shift;
+my $command = shift;
+my $xp = Expect->new;
+$xp->slave->clone_winsize_from(\*STDIN);
+$xp->spawn('ssh', $host);
+$SIG{WINCH} = sub {
+    $xp->slave->clone_winsize_from(\*STDIN);
+    kill WINCH => $xp->pid if $xp->pid;
+    # XXX needed? # $SIG{WINCH} = \&winch;
+};
+$xp->expect(2, [
+    # dependent on my prompt style.
+    qr/\e\[.+\e\[0m% / => sub { $xp->send($command . "\n") },
+]);
+$xp->interact;

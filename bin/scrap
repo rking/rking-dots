@@ -1,0 +1,5 @@
+#!/bin/sh -e
+# Make a quick scratch space for code. Sort of a sibling to irby/pry
+test -d ~/src/scrap || mkdir -p $_
+cd $_
+kiss foo.rb

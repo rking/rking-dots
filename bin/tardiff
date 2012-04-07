@@ -1,0 +1,18 @@
+#!/usr/bin/perl -w
+# Show diffs between two tarballs.
+use strict;
+sub sh {
+    system(@_) == 0 or die "Couldn't @_: $!";
+}
+sub tarinto {
+    my ($dir, $tarball) = @_;
+    mkdir $dir or die $!;
+    chdir $dir or die $!;
+    sh "uz ../$tarball";
+    chdir '..' or die $!;
+}
+die "usage: tardiff a.tgz b.tgz" if @ARGV != 2;
+tarinto '0', $ARGV[0];
+tarinto '1', $ARGV[1];
+sh 'diff -ru 0 1 | vim-pager';
+sh 'rm -rf 0 1';

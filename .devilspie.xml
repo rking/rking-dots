@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<!DOCTYPE devilspie SYSTEM "devilspie.dtd">
+
+<devilspie>
+  <!--
+  <flurb name="Print Window Names"> <matchers> <matcher name="DevilsPieMatcherAlways"/> </matchers> <actions> <action name="DevilsPieActionDebug"/> </actions> </flurb>
+  -->
+
+  <flurb>
+    <matchers>
+      <matcher name="DevilsPieMatcherWindowName">
+        <property name="application_name" value="Skype"/>
+      </matcher>
+    </matchers>
+    <actions>
+      <action name="DevilsPieActionSetWorkspace">
+        <property name="pinned" value="TRUE"/>
+      </action>
+      <action name="DevilsPieActionLayer">
+        <property name="above" value="FALSE"/>
+      </action>
+    </actions>
+  </flurb>
+
+  <flurb>
+    <matchers>
+      <matcher name="DevilsPieMatcherWindowName">
+        <property name="application_name" value="xchat"/>
+      </matcher>
+    </matchers>
+    <actions>
+      <action name="DevilsPieActionSetWorkspace">
+        <property name="pinned" value="TRUE"/>
+      </action>
+      <action name="DevilsPieActionLayer">
+        <property name="above" value="FALSE"/>
+      </action>
+    </actions>
+  </flurb>
+
+  <flurb>
+    <matchers>
+      <matcher name="DevilsPieMatcherWindowName">
+        <property name="application_name" value="logwatcher"/>
+      </matcher>
+    </matchers>
+    <actions>
+      <action name="DevilsPieActionSetWorkspace">
+        <property name="pinned" value="TRUE"/>
+      </action>
+    </actions>
+  </flurb>
+
+  <flurb>
+    <matchers>
+      <matcher name="DevilsPieMatcherWindowName">
+        <property name="application_name" value="Xmms"/>
+      </matcher>
+    </matchers>
+    <actions>
+      <action name="DevilsPieActionSetWorkspace">
+        <property name="pinned" value="TRUE"/>
+      </action>
+    </actions>
+  </flurb>
+
+  <flurb>
+    <matchers>
+      <matcher name="DevilsPieMatcherWindowName">
+        <property name="application_name" value="irefox"/>
+      </matcher>
+    </matchers>
+    <actions>
+      <action name="DevilsPieActionSetWorkspace">
+        <property name="workspace_index" value="2"/>
+      </action>
+    </actions>
+  </flurb>
+
+  <flurb>
+    <matchers>
+      <matcher name="DevilsPieMatcherWindowName">
+        <property name="application_name" value="VNC.*"/>
+      </matcher>
+    </matchers>
+    <actions>
+      <action name="DevilsPieActionSetWorkspace">
+        <property name="workspace_index" value="2"/>
+      </action>
+    </actions>
+  </flurb>
+
+</devilspie>

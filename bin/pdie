@@ -1,0 +1,3 @@
+#!/bin/sh
+# Edit error messages in the form of "filename.x line 123"
+vim $1 +$3

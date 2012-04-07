@@ -1,0 +1,45 @@
+#!/bin/zsh
+export CFGDIR=~/src/config NLWDIR=~/src/social/nlw
+showbanner() { [ -e .banner ] && cat .banner }
+svncd() {
+    cd $1
+    showbanner
+    svn up
+    svn status
+}
+conceive() { command conceive "$@"; rehash }
+aginstall() { ~/bin/aginstall "$@"; rehash }
+for n in mv cp man svn; do alias $n="nocorrect $n"; done
+alias ls='ls --classify --color=auto'
+alias ll='ls -l'
+alias la='ls -la'
+
+colornlw() {
+    cd ~/src/social
+    [ -e $1-nlw ] || (echo "No such numba"; return)
+    rm nlw 2>&1 > /dev/null
+    ln -fs ${1}-nlw nlw
+    cd nlw
+    showbanner
+}
+alias standup='(echo -n "stand-up: "; randlist < ~/.st-haxors) | xclip'
+
+alias cdnlw="cd $NLWDIR; showbanner"
+alias CDnlw="svncd $NLWDIR"
+alias cdcfg="cd $CFGDIR"
+alias CDcfg="svncd $CFGDIR && make"
+alias accessd="cd /var/log/apache-perl/; ls"
+alias vv='vim ~/.vimrc'
+alias vz='vim ~/.zshrc; source ~/.zshrc'
+alias tl='test-less'
+alias tlp='test-less --prove'
+alias dict='/usr/bin/dict -dall'
+kiss() { ~/bin/kiss "$@"; rehash }
+cd() { builtin cd "$@"; screentitle $(basename $(pwd))/; }
+# vim() { /usr/bin/vim "$@"; screentitle $PWD }
+viml='vim !! -l'
+s50() { convert -sample 50% $1 $1 }
+s75() { convert -sample 75% $1 $1 }
+echo x | (grep x --color >/dev/null 2>&1) && alias grep='grep --color=auto'
+source ~/., # run ,h for help
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"

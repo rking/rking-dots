@@ -1,0 +1,74 @@
+# Configuration file for ccze
+#
+# Available 'pre' attributes: , underline, underscore, blink, reverse
+# Available colors:  black, red, green, yellow, blue, magenta, cyan, white
+# Available bgcolors: on_black, on_red, on_green, on_yellow, on_blue, on_magenta, on_cyan, on_white
+#
+# You can also use item names in color definition, like:
+#
+# default   blue
+# date      'default'
+#
+# Here you defined default color to blue, and date color to default value's color, so
+# your date color is blue. (You can only use predefined item names!)
+
+# item          color                   # comment (what is color, or why it's that ;)
+
+default         default                    # Default (not colorised)
+date             blue               # Dates and times
+host             blue               # Host names and IP numbers
+process         green                   # Sender process
+pid              cyan              # PIDs (Process IDs)
+pid-sqbr         green              # Brackets around PIDs
+email            green              # E-mail addresses
+subject         magenta                 # Subject lines (procmail)
+dir              cyan               # Directory names
+size             cyan              # Sizes
+user             yellow             # Usernames
+httpcodes        bold green              # HTTP status codes (200, 404, etc)
+getsize         magenta                 # Transfer sizes
+get             green                   # HTTP GET
+post             green              # HTTP POST
+head            green                   # HTTP HEAD
+put              green              # HTTP PUT
+connect         green                   # HTTP CONNECT
+trace           green                   # HTTP TRACE
+unknown         green                    # Unknown message
+gettime          magenta            # Transfer times
+uri              green              # URIs (http://, ftp://, etc)
+ident            cyan              # Remote user (proxy/http)
+ctype           cyan                   # Content type (http/proxy)
+error            red                # Error messages
+miss            red                     # Proxy MISS
+hit              yellow             # Proxy HIT
+deny             red                # Proxy DENIED
+refresh          cyan              # Proxy REFRESH
+swapfail         cyan              # Proxy SWAPFAIL
+debug           cyan                   # Debug messages
+warning         red                     # Warnings
+direct           cyan              # Proxy DIRECT
+parent           yellow             # Proxy PARENT
+swapnum         blue on_white           # Proxy swap number
+create           cyan              # Proxy CREATE
+swapin           cyan              # Proxy SWAPIN
+swapout          cyan              # Proxy SWAPOUT
+release          cyan              # Proxy RELEASE
+mac              cyan              # MAC addresses
+version          cyan              # Version numbers
+address          cyan              # Memory addresses
+numbers         cyan                   # Numbers
+signal           yellow             # Signal names
+service          magenta            # Services
+prot            magenta                 # Protocols
+bad              yellow             # "Bad words"
+good             green              # "Good words"
+system           green               # "System words"
+incoming         cyan              # Incoming mail (exim)
+outgoing        cyan                   # Outgoing mail (exim)
+uniqn            cyan              # Unique ID (exim)
+repeat          cyan                   # 'last message repeated N times'
+field           green                   # RFC822 Field
+chain           default                    # Chain names (ulogd)
+percentage       yellow             # Percentages
+ftpcodes        default                    # FTP codes
+keyword          yellow             # Various keywords (like PHP in php.log, etc)

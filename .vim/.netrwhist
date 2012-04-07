@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/rking/src/gruff/branches'
+let g:netrw_dirhist_2='/home/rking/src/gruff/tags'
+let g:netrw_dirhist_3='/home/rking/src/gruff/trunk'
+let g:netrw_dirhist_4='/home/rking/src/seamless/lib/seamless'
+let g:netrw_dirhist_5='/home/rking/src/rking/config/.git'
+let g:netrw_dirhist_6='/home/rking/src/rking/config/.mlterm'
+let g:netrw_dirhist_7='/home/rking/src/rking/config/.vim'

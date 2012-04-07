@@ -1,0 +1,3 @@
+#!/bin/sh
+# rsync over ssh. Should probably get a better name. =)
+rsync -azessh "$@"

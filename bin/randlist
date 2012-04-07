@@ -1,0 +1,8 @@
+#!/usr/bin/perl -w
+# Grab a random line from a file.
+use strict;
+my @list = map { chomp; $_ } <STDIN>;
+my @shuffled;
+push @shuffled, splice @list, rand($#list)
+    while @list;
+print join ', ', @shuffled;

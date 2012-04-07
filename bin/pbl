@@ -1,0 +1,3 @@
+#!/bin/sh
+# Build/install a perl module, locally.
+perl Build.PL install_base=~/local && make && make install

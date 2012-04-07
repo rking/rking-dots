@@ -1,0 +1,7 @@
+#!/usr/bin/perl -w
+# Show tokens that have no repetition. I can't remember what this is for.
+use strict;
+my $stuff = join '', <>;
+my %tokens;
+$tokens{$_}++ for split /\b/, $stuff;
+print join "\n", sort grep { $tokens{$_} == 1 } keys %tokens;

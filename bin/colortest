@@ -1,0 +1,11 @@
+#!/usr/bin/perl -w
+# See the current terminal color config.
+use strict;
+for my $i ('', ';1') {
+    for my $f (30..37) {
+        for my $b (40..47) {
+            my $code = "$f;$b$i";
+            print "\e[3${code}m$code\e[3m\t"
+        }
+    }
+}

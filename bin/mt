@@ -1,0 +1,3 @@
+#!/bin/sh
+# A quick one: make test
+make test

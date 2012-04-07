@@ -1,0 +1,2 @@
+#!/bin/sh
+svndiff -rPREV:HEAD "$@"

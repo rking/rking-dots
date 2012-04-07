@@ -1,0 +1,3 @@
+#!/bin/sh
+# Start a terminal at the right spot to watch logs.
+xterm -geom 43x51+975+1 -title logwatcher -e screen -m -c ~/.logscreenrc &

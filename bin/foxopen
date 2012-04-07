@@ -1,0 +1,4 @@
+#!/bin/sh
+# Open in a Firefox tab.
+URL=`echo $1|tr -d \'\"\)`
+firefox -remote "openURL($URL, new-tab)"

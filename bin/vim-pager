@@ -1,0 +1,7 @@
+#!/bin/sh
+# Use vim like "less". Makes "space" page downwards and Ctrl+c quit.
+vim - \
+    +'map <space> <c-d>' \
+    +'map <c-c> :q<enter>' \
+    +'set nomod iskeyword+=.  iskeyword+=/' \
+    "$@"

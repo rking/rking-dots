@@ -1,0 +1,81 @@
+source ~/.diffmuttrc
+
+set mbox=+inbox
+mailboxes \
+  =commiters-bf \
+  =inbox \
+  =mutt \
+  =metal \
+  =spam \
+
+#subscribe debian-user
+
+auto_view text/html
+
+set hostname='panoptic.com'
+#set from=rking@sharpsaw.org
+#set from=normal@sharpsaw.org
+
+source ~/.maliases
+
+color hdrdefault red default
+color quoted green default
+color signature red default
+color indicator black green
+color error red default
+color status yellow blue
+color tree yellow default # the thread tree in the index menu
+color tilde blue default
+color message cyan default
+color markers cyan default
+color attachment yellow default
+color search black green # how to hilite search patterns in the pager
+
+set index_format="%C %Z%-15.15L %s"
+color header red default "^(From|Subject):"
+color body yellow default "[-a-z_0-9.]+@[-a-z_0-9.]+" # e-mail addresses
+color body magenta default "rking/[^ \"]*" # Page Requests
+color body red default "\\<q=[^&\"]*" # Google searches
+color body blue default "^.*(/bot.php|google.com/bot.html|bingbot.htm|baidu.com/search/spider.html|msnbot.htm|Exabot|ahrefs.com/robot|YandexBot|ezooms.bot).*$" # spiders
+color body cyan default "^.*rking/co.*$" # Corrie's Wiki
+color underline green default
+
+#message-hook '^Modified: ' 'sadfsdecho marble'
+#message-hook "hitlog" "color body green default 'GET [^\"]*'"
+
+uncolor index '*'
+color index red default '~s cron'
+color index green default '~t .*rking-(jobs\|brad).*'
+color index green default '~f .*mkyco@yahoo.com.*'
+color index yellow black '~h X-Spam-Status:\ Yes'
+
+#set assumed_charset="utf-8:big5"
+set charset=utf-8
+set send_charset=utf-8
+
+set ascii_chars # for the `--> stuff
+set postponed=+postponed
+set reply_to=ask-yes
+set ispell="aspell -e -c"
+set help=no
+set arrow_cursor=yes
+
+set pager_index_lines=4
+set folder="~/mail"
+set delete=yes
+set sort=threads
+set confirmappend=no
+set record=+sent
+ignore *
+hdr_order date from newsgroups subject to cc
+unignore \
+    from: subject to cc date reply-to \
+    in-reply-to mail-followup-to \
+    precedence x-mailer x-url \
+    organization newsgroups x-newsgroups \
+    content-type
+
+macro index Z ":source .muttrc\r"
+#folder-hook inbox push "D~h X-Spam-Status:.Yes"
+#folder-hook inbox push "D~f Socialtext\ Work"
+folder-hook spam push 'D.\n'
