@@ -40,14 +40,24 @@ All machine-specific stuff can be driven by two scripts:
 
 One kind of weird part is the generation of the ~/.screenrc's. This is
 essentially so that I can set $SCREENESC and $SCREENCOLOR on a per-machine
-basis. This is because when I'm on my desktop using ^a with green, then
-connected to a DMZ machine using ^x with red, and finally a dev machine with
-^j and blue -- they are all quickly identified and manipulated.
+basis (in ~/.localrc). This is because when I'm on my desktop using ^a with
+green, then connected to a DMZ machine using ^x with red, and finally a dev
+machine with ^j and blue -- they are all quickly identified and manipulated.
+
+A simple ~/.localrc for this would be:
+
+export COLOR=33 SCREENCOLOR=y SCREENESC=j
+
+This makes the $PS1 color (terminal "33") the same as the screen status color.
 
 It's been a while since I looked at this, so perhaps there is a way to make it
 work without the ~/.screenrc generation.
 
 = Next Step =
+
+It needs some kind of personal overlay system - so I can separate the stuff I
+think is of general use from the things that are clearly specific to my own
+projects.
 
 A more complete solution would be more based on sets of configs. So, people
 who use bash could get all the common stuff with people who use zsh, etc. I
