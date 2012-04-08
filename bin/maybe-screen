@@ -2,4 +2,5 @@
 # Either run screen if fresh, reattach if there is a detached, or else panic.
 # Still needed? [ "$TERM" = screen.linux ] && export TERM=screen
 (screen -list | grep -C100 'Multi, .*tached' 2>&1>/dev/null) || exec screen
-screen -r
+screen -r "$@"
+zsh

@@ -1,0 +1,3 @@
+#!/bin/sh
+# Connect to panoptic, but with screen -x, expecting a multiple-connection
+screen-xssh panoptic.com "$@"
