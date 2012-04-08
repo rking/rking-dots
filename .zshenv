@@ -21,25 +21,25 @@ eval $(dircolors)
 eval `dircolors -b`
 export ZLS_COLORS=$LS_COLORS
 setopt \
-	autocd \
-	autolist \
-	autopushd \
-	autoresume \
-	cdablevars \
-	correct \
-	correctall \
-	extendedglob \
-	globdots \
-	histignoredups \
-	longlistjobs \
-	mailwarning \
-	noclobber \
+    autocd \
+    autolist \
+    autopushd \
+    autoresume \
+    cdablevars \
+    correct \
+    correctall \
+    extendedglob \
+    globdots \
+    histignoredups \
+    longlistjobs \
+    mailwarning \
+    noclobber \
     noignoreeof \
-	notify \
-	pushdminus \
-	pushdsilent \
-	pushdtohome \
-	rcquotes \
+    notify \
+    pushdminus \
+    pushdsilent \
+    pushdtohome \
+    rcquotes \
     appendhistory \
     completeinword \
     equals \
