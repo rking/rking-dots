@@ -1,4 +1,5 @@
 #!/bin/sh
-# Open in a Firefox tab.
-URL=`echo $1|tr -d \'\"\)`
-firefox -remote "openURL($URL, new-tab)"
+# Open in a Firefox tab, and expands the current file as a file:// if needed.
+URL=$1
+[[ -e $URL ]] && URL="file://`pwd`/$URL"
+firefox-bin "$URL"
