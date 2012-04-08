@@ -1,4 +1,5 @@
-= The Idea =
+The Idea
+--------
 
 So I can sit down at an unconfigured machine, and run:
 
@@ -17,7 +18,8 @@ At the moment, some of this is a bit crufty, but I plan on refining it
 soonish. If I remember to remove this comment then it proves that I was
 serious about this intention.
 
-= Intertwinencies =
+Intertwinencies
+---------------
 
 This stuff pretty much assumes the presence (and use) of:
     - zsh
@@ -27,7 +29,8 @@ This stuff pretty much assumes the presence (and use) of:
 Note that the X stuff comes along for the ride, but simply sits there and does
 nothing on the machines it is irrelevant to.
 
-= Per-host Config =
+Per-host Config
+---------------
 
 All machine-specific stuff can be driven by two scripts:
     ~/.localrc (sourced by .zshenv) - Good for setting variables that will
@@ -36,7 +39,8 @@ All machine-specific stuff can be driven by two scripts:
     ~/.afterlocalrc (sourced by .zshrc) - Good for overriding anything that
         would otherwise get clobbered by being set in ~/.localrc alone.
 
-= .screenrc =
+.screenrc
+---------
 
 One kind of weird part is the generation of the ~/.screenrc's. This is
 essentially so that I can set $SCREENESC and $SCREENCOLOR on a per-machine
@@ -47,13 +51,15 @@ connected to a DMZ machine using ^x with red, and finally a dev machine with
 It's been a while since I looked at this, so perhaps there is a way to make it
 work without the ~/.screenrc generation.
 
-= Next Step =
+Next Step
+---------
 
 A more complete solution would be more based on sets of configs. So, people
 who use bash could get all the common stuff with people who use zsh, etc. I
 haven't had this problem, yet, so I'm leaving it non-generalized. If you want
 to be the second test case, I'd be happy to cook something up.
 
-= Thanks =
+Thanks
+------
 
 ...to COL Ingus for the original conception of the system.
