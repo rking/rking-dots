@@ -1,0 +1,38 @@
+#!/bin/env ruby
+# Convert Markdown to HTML (outputs filename.md as filename.html)
+require 'rdiscount'
+require 'optparse'
+
+options = {}
+OptionParser.new do |opts|
+    opts.banner = "Usage: md2html [-f] Foo.md"
+
+    opts.on("-f", "--[no-]firefox", "View results in Firefox") do |o|
+        options[:firefox] = o
+    end
+end.parse!
+
+md_name = ARGV[0]
+md = RDiscount.new open(md_name).read
+html_name = md_name.sub /(md)?$/, 'html'
+open(html_name, 'w').print %{\
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>#{md_name} converted to HTML...</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+</head>
+
+<body>
+
+#{md.to_html}
+
+</body>
+</html>
+}
+
+if options[:firefox]
+    system('foxopen', html_name)
+end
