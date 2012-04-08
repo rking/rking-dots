@@ -1,11 +1,18 @@
-#!/usr/bin/perl -w
-# See the current terminal color config.
-use strict;
-for my $i ('', ';1') {
-    for my $f (30..37) {
-        for my $b (40..47) {
-            my $code = "$f;$b$i";
-            print "\e[3${code}m$code\e[3m\t"
-        }
-    }
-}
+#!/usr/bin/env python
+# Print out all colors. This version replaced a crummy one I had.
+# (Is from http://shallowsky.com/blog/2011/Jan/18/ )
+
+# Display the colors available in a terminal.
+
+print "16-color mode:"
+for color in range(0, 16) :
+    for i in range(0, 3) :
+        print "\033[0;%sm%02s\033[m" % (str(color + 30), str(color)),
+    print
+
+# Programs like ls and vim use the first 16 colors of the 256-color palette.
+print "256-color mode:"
+for color in range(0, 256) :
+    for i in range(0, 3) :
+        print "\033[38;5;%sm%03s\033[m" % (str(color), str(color)),
+    print
