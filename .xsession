@@ -6,6 +6,8 @@ mailterm
 codeterm
 logwatcher
 
+nvidia-settings -a InitialPixmapPlacement=0 -a GlyphCache=1 # XXX Maybe?
+
 hotkeys -t msdigimedia &
 bbkeys &
 unclutter -idle 1 &
