@@ -21,6 +21,7 @@ escape ^$SCREENESC$SCREENESC
 hardstatus alwayslastline "%{${SCREENCOLOR}w}$SCREENESC: %-Lw%{= ${SCREENCOLOR}w}%50>%n%f* %t%{-}%+Lw%< %>"
 
 # this is also crufty, but it gives us 256 colors of power.
+term screen-256color-bce
 attrcolor b ".I"
 termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
 defbce "on"
