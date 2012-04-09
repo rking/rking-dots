@@ -7,10 +7,6 @@ set backspace=indent,eol,start hlsearch notimeout clipboard=
 set suffixes=.bak,~,.o,.h,.info,.swp,.obj,.class wildmode=list:longest,full
 set encoding=utf-8 termencoding=utf-8 " digraph keymap=greek iminsert=0
 
-" t_Co=256 ?
-"colorscheme darkblue "| set bg=dark
+filetype plugin on
 
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
-
-" for iso-2022-jp: set termencoding=euc-jp encoding=japan fileencodings=iso-2020-jp,cp932,utf-8,japan
-" Or just: iconv -f ISO2022JP2 -t UTF-8
