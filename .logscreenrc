@@ -1,5 +1,4 @@
-escape ^xx
-screen st www
+screen watch-xsession-errors
 split
 focus down
-screen st talc -t screen -c ~/.myerrlogscreenrc
+screen watch-var-log
