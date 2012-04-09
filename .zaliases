@@ -16,6 +16,8 @@ alias la='ls -la'
 
 alias standup='(echo -n "stand-up: "; randlist < ~/.st-haxors) | xclip'
 
+alias pmf='perl Makefile.PL install_base=~/local' 
+
 alias cdcfg="cd $CFGDIR"
 alias CDcfg="gitcd $CFGDIR && make"
 alias accessd="cd /var/log/apache-perl/; ls"
