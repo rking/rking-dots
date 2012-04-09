@@ -1,0 +1,30 @@
+; (debug)
+(if
+ (matches (application_name) "term$")
+ (begin
+  (pin)
+ )
+ )
+
+(if
+ (is (application_name) "logsterm")
+ (begin
+  (skip_tasklist)
+ )
+ )
+
+(if
+ (is (application_name) "Firefox")
+ (begin
+  (set_workspace 2)
+  (above)
+ )
+ )
+
+(if
+ (matches (application_name) "^Blender")
+ (begin
+  (set_workspace 3)
+  (above)
+ )
+ )
