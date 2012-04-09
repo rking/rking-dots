@@ -1,1 +1,16 @@
-/home/rking/src/rking/config/.,
+#!/bin/sh
+# Helpers for ssh-from-mobile-phone. Run ,h to see the options.
+## Tips:
+## Know your terminal keys: Ctrl+i, Ctrl+u ...
+## It is generally faster to hit "12#" then a number/special than to longpress.
+for dep in perl links; do
+    which $dep > /dev/null || echo "Missing $dep, so some ,feature won't work."
+done
+alias ,h='perl -ne "print qq(\$1 - \$2\n) if /^[^,]*?(,[^(=]+)?.*## (.+)/" ~/.,' ## help
+,g() { ## Google using links. Works with 0, 1, or many arguments.
+  links "http://www.google.com/search?q=$*"
+}
+alias ,M='./configure --prefix=$HOME/local && make install' ## Configure & make install, to ~/local
+if [ ! -z "$ZSH_VERSION" ]; then
+  bindkey -s ¦ '|' ## (Also note: The Android keyboard uses a messed up pipe symbol, but we fix that.)
+fi
