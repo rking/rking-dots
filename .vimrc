@@ -25,7 +25,6 @@
 " /home/rking/.vim/indent/eruby.vim
 " /home/rking/.vim/indent/ruby.vim
 " /home/rking/.vim/colors/inkpot.vim
-" /home/rking/.vim/colors/.inkpot.vim.swp
 " /home/rking/.vim/syntax/eruby.vim
 " /home/rking/.vim/syntax/ruby.vim
 " /home/rking/.vim/.gitignore
