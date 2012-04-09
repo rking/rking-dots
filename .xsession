@@ -14,9 +14,10 @@ firefox-bin &
 devilspie 2>&1 | grep -v 'e_sexp_eval: assertion `f->tree != NULL' | \
     sed 's/.*/devilspie noise: [34m&[0m/' &
 
-# These next two shouldn't be necessary.
-SESSION_ID=`ls -t /tmp/.ICE-unix/ | head -n1`
-SESSION_MANAGER="local/$HOST:/tmp/.ICE-unix/$SESSION_ID" 
+### Furthermore, they're not working right. =\
+## These next two shouldn't be necessary.
+#SESSION_ID=`ls -t /tmp/.ICE-unix/ | head -n1`
+#export SESSION_MANAGER="local/$HOST:/tmp/.ICE-unix/$SESSION_ID" 
 
 xfdesktop &
 xfwm4 --daemon
