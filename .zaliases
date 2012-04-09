@@ -8,6 +8,7 @@ gitcd() {
     git status
 }
 conceive() { command conceive "$@"; rehash }
+emerge() { sudo emerge "$@"; rehash }
 
 for n in mv cp man svn git; do alias $n="nocorrect $n"; done
 alias ls='ls --classify --color=auto'
