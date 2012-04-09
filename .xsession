@@ -1,27 +1,21 @@
 #!/bin/sh
 PATH=~/bin:$PATH
-ssh-add ~/.ssh/id_dsa
+ssh-add ~/.ssh/id_rsa
+
+#nvidia-settings -a InitialPixmapPlacement=0 -a GlyphCache=1 # XXX Maybe?
 
 mailterm
 codeterm
-logwatcher
+logsterm
 
-nvidia-settings -a InitialPixmapPlacement=0 -a GlyphCache=1 # XXX Maybe?
-
-hotkeys -t msdigimedia &
-bbkeys &
 unclutter -idle 1 &
-xmodmap -e 'keycode 113 = Multi_key'
-#uim-xim --engine=pinyin-big5 &
 
-skype &
-nice -n 19 firefox &
-xchat &
-devilspie -a &
+firefox-bin &
+devilspie 2>&1 | grep -v 'e_sexp_eval: assertion `f->tree != NULL' | \
+    sed 's/.*/devilspie noise: [34m&[0m/' &
 
 xfdesktop &
 xfwm4 --daemon
 xfce4-panel
 
-killall devilspie skype unclutter xchat uim-xim bbkeys hotkeys
-#echo -n > .xsession-errors
+killall devilspie skype unclutter
