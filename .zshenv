@@ -23,7 +23,6 @@ fi
 export PROMPT="%{[${COLOR}m%}%m%{[0m%}%# " RPROMPT='%~'
 export HISTSIZE=100000 HISTFILE=~/.zsh_history SAVEHIST=100000
 eval $(dircolors)
-eval `dircolors -b`
 export ZLS_COLORS=$LS_COLORS
 setopt \
     autocd \
