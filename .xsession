@@ -1,5 +1,7 @@
-#!/bin/sh
+#!/bin/zsh
 PATH=~/bin:$PATH
+source ~/.localrc
+
 ssh-add ~/.ssh/id_rsa
 
 #nvidia-settings -a InitialPixmapPlacement=0 -a GlyphCache=1 # XXX Maybe?
@@ -14,13 +16,7 @@ firefox-bin &
 devilspie 2>&1 | grep -v 'e_sexp_eval: assertion `f->tree != NULL' | \
     sed 's/.*/devilspie noise: [34m&[0m/' &
 
-### Furthermore, they're not working right. =\
-## These next two shouldn't be necessary.
-#SESSION_ID=`ls -t /tmp/.ICE-unix/ | head -n1`
-#export SESSION_MANAGER="local/$HOST:/tmp/.ICE-unix/$SESSION_ID" 
-
-xfdesktop &
-xfwm4 --daemon
-xfce4-panel
+ck-launch-session # ConsoleKit stuff (needed for wicd)
+xfce4-session
 
 killall devilspie skype unclutter

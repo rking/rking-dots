@@ -31,7 +31,6 @@ setopt \
     autoresume \
     cdablevars \
     correct \
-    correctall \
     extendedglob \
     globdots \
     histignoredups \
