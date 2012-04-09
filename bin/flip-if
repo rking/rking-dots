@@ -1,0 +1,27 @@
+#!/usr/bin/perl -w
+use strict;
+
+sub rephrase {
+    my $input = shift;
+    $input =~ /^(\s*)(.*?)\b(if|for|unless|while)\b(.+?)$/s
+        or return "# huh?\n$input";
+    my ($leading_space, $keyword) = ($1, $3);
+    if ($2) { # statement-modifier form
+        my $statement = clean($2);
+        my $condition = clean($4);
+        $condition =~ s/;$//;
+        return "$leading_space$keyword ($condition) {\n"
+            . "$leading_space    $statement;\n"
+            . "$leading_space}";
+    }
+    else { # block form
+        my ($condition, $statement) =
+            clean($4) =~ /\(([^)]+)\)\s*{([^;]+);?\s*}/s;
+        $statement = clean($statement);
+        return "$leading_space$statement\n$leading_space  $keyword $condition;"
+    }
+}
+
+sub clean { $_ = shift; s/^\s*//; s/\s*$//; $_ }
+
+print rephrase(join '', <STDIN>);
