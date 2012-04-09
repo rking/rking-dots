@@ -20,7 +20,7 @@ install:
 	@echo
 	@for n in ~/bin/* ~/.*; do \
 		([ -L $$n -a ! -e $$n ] && ( \
-			echo -e "\e[31mRemoving dead symlink: $$n\e[0m"; echo rm $$n \
+			echo -e "\e[31mRemoving dead symlink: $$n\e[0m"; rm $$n \
 		)) || true; done
 
 uninstall:
