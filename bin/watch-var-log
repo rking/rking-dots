@@ -1,0 +1,4 @@
+#!/bin/sh
+LOGS=`file /var/log/* | egrep -v '(data|directory)$' |\
+    cut -d: -f1 | egrep -v '\.(gz|old)$'`
+tail -f $LOGS
