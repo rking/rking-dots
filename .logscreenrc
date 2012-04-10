@@ -1,4 +1,4 @@
-screen watch-xsession-errors
+screen watch-var-log
 split
 focus down
-screen watch-var-log
+screen watch-xsession-errors
