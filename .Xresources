@@ -8,19 +8,23 @@
 *VT100*Font5: -misc-fixed-medium-r-normal--18-*-*-*-*-*-iso10646-1
 *VT100*Font6: -efont-fixed-medium-r-normal-*-24-*-*-*-*-*-iso10646-1
 
-*VT100*color0:Black
+#define RjkYellow #bbbb88
+#define RjkBlue #3333bf
+#define RjkGreen #19bf3a
+
+*VT100*color0:Grey20
 *VT100*color1:Orange
-*VT100*color2:PaleGreen
-*VT100*color3:rgb:bb/bb/88
-*VT100*color4:LightSlateBlue
+*VT100*color2:RjkGreen
+*VT100*color3:RjkYellow
+*VT100*color4:RjkBlue
 *VT100*color5:Plum
 *VT100*color6:LightSkyBlue
 *VT100*color7:White
 *VT100*color8:Black
 *VT100*color9:Orange
-*VT100*color10:PaleGreen
-*VT100*color11:Yellow
-*VT100*color12:LightSlateBlue
+*VT100*color10:RjkGreen
+*VT100*color11:RjkYellow
+*VT100*color12:RjkBlue
 *VT100*color13:Plum
 *VT100*color14:LightSkyBlue
 *VT100*color15:White

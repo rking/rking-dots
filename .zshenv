@@ -7,6 +7,7 @@ export \
     CPATH=$HOME/local/include \
     RUBY_LIB=$HOME/local/lib \
     GEM_HOME=$HOME/local/gems \
+    PERL5LIB=$HOME/local/lib/perl5 \
     EDITOR=vim VISUAL=vim \
 
 which ccache 2>&1 > /dev/null && export CC='ccache gcc'
