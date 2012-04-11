@@ -1,3 +1,5 @@
+*VT100*metaSendsEscape: true
+
 *VT100*foreground: gray90
 *VT100*background: black
 
