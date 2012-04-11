@@ -31,8 +31,15 @@ kiss() { ~/bin/kiss "$@"; rehash }
 cd() { builtin cd "$@"; ~/bin/screentitle $(basename "$(pwd)")/; }
 # vim() { /usr/bin/vim "$@"; screentitle $PWD }
 viml='vim !! -l'
+
 s50() { convert -sample 50% $1 $1 }
 s75() { convert -sample 75% $1 $1 }
+
 echo x | (grep x --color >/dev/null 2>&1) && alias grep='grep --color=auto'
+
+alias cj=clipjoin
+alias cb=clipbrowse
+alias ce=clipedit
+
 source ~/., # run ,h for help
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
