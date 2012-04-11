@@ -39,6 +39,7 @@ setopt \
     mailwarning \
     noclobber \
     noignoreeof \
+    nolistbeep \
     notify \
     pushdminus \
     pushdsilent \
