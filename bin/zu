@@ -1,0 +1,51 @@
+#!/usr/bin/env ruby
+# The goal: like "uz", but smarter.
+
+# TODO:
+# - http://... (with wget first)
+# - Plus build?
+# - These:
+#     .tar.gz
+#     .tar.bz2
+#     .tar.xz
+#     .tar
+#     .gz
+#     .bz2
+#     .xz
+#     ...?
+
+class Array
+    def polite?
+        dir_match = %r[[^/]+/]
+        first = self[0][dir_match]
+        self.size == 1 or (
+            first and size == select do |e| e[dir_match] == first end.size
+        )
+    end
+end
+
+ARGV.each do |f|
+    if not File.exists? f
+        warn "'#{f}' doesn't seem to exist."
+        next
+    end
+    if f[/(.+)\.zip/]
+        basename = $1
+        if not basename
+            raise "Weird. #{f} did not match basename."
+        end
+        files = `zipinfo -1 "#{f}"`.split /\n/
+        if files.polite?
+            system 'unzip', f
+        else
+            puts "# Caught impoliteness. mkdir \e[34;1m#{basename}\e[0m/, then."
+            Dir.mkdir basename
+            Dir.chdir basename do
+                system 'unzip', "../#{f}"
+            end
+        end
+        File.unlink f
+    else
+        warn "'#{f}' - Unknown extension."
+    end
+end
