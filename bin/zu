@@ -31,6 +31,7 @@ ARGV.each do |f|
     end
     if f[/(.+)\.zip/]
         basename = $1
+        full_path = File.expand_path f
         if not basename
             raise "Weird. #{f} did not match basename."
         end
@@ -41,7 +42,7 @@ ARGV.each do |f|
             puts "# Caught impoliteness. mkdir \e[34;1m#{basename}\e[0m/, then."
             Dir.mkdir basename
             Dir.chdir basename do
-                system 'unzip', "../#{f}"
+                system 'unzip', full_path
             end
         end
         File.unlink f
