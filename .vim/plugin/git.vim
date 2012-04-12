@@ -3,6 +3,7 @@
 " Whole-tree stuff:
 map <Leader>gD :!gitdiff<cr>
 map <Leader>gbc :!gitbitcommit<cr>
+map <Leader>gp :!git push<cr>
 
 " This-file stuff:
 map <Leader>gd :!gitdiff %<cr>
