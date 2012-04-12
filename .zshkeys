@@ -6,7 +6,6 @@ autoload edit-command-line; zle -N edit-command-line
 fpath=(~/.zsh/completion $fpath)
 autoload -U compinit; compinit
 bindkey -M vicmd v edit-command-line
-bindkey '^I' complete-word
 # XXX deprecated way - should be like in zshcompwid(1)
 compctl -/ -g '*~(CVS|.svn)(/)' cd
 compctl -g '*~.svn' vim
