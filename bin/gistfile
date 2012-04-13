@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+raise "Not 1 filename given." unless ARGV.size == 1
+cmd = "echo 'gist -f #{ARGV[0]}' | pry" # TODO: use the actual gist gem.
+system cmd or raise "$?"
