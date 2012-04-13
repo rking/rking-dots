@@ -7,9 +7,10 @@
  )
 
 (if
- (is (application_name) "logsterm")
+ (is (application_name) "logwatcher")
  (begin
   (skip_tasklist)
+  (pin)
  )
  )
 
