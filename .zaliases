@@ -26,7 +26,7 @@ alias vv='vim ~/.vimrc'
 alias vz='vim ~/.zshrc; source ~/.zshrc'
 alias tl='test-less'
 alias tlp='test-less --prove'
-alias dict='/usr/bin/dict -dall'
+dict() { /usr/bin/dict -dall "$@" | less -F }
 kiss() { ~/bin/kiss "$@"; rehash }
 cd() { builtin cd "$@"; ~/bin/screentitle $(basename "$(pwd)")/; }
 # vim() { /usr/bin/vim "$@"; screentitle $PWD }
