@@ -8,7 +8,7 @@ ssh-add ~/.ssh/id_rsa
 
 mailterm
 codeterm
-logsterm
+logwatcher
 
 unclutter -idle 1 &
 
