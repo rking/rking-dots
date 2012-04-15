@@ -1,0 +1,2 @@
+#!/bin/sh
+gdb-bt-full | gistcat
