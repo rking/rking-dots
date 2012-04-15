@@ -1,0 +1,8 @@
+#!/bin/sh
+exe=$1
+core=$2
+if [ -z "$exe" -o -z "$core" ]; then
+    echo "Should be: $(basename $0) theexe corefile"
+    exit 1
+fi
+gdb $exe --core $core --batch --quiet -ex "thread apply all bt full" -ex "quit"
