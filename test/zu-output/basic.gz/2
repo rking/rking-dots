@@ -1,0 +1,2 @@
+gzip: /home/rking/src/config/test/zu-input/basic.gz: No such file or directory
+[31m`gunzip /home/rking/src/config/test/zu-input/basic.gz /home/rking/src/config/test/zu-input/basic.gz /home/rking/src/config/test/zu-input/basic.gz` failed (pid 15172 exit 1).[0m
