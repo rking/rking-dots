@@ -32,4 +32,7 @@
 " /home/rking/.vim/ftplugin/ruby.vim
 " /home/rking/.vim/ftdetect/ruby.vim
 
+" this /only/ works if it's set in .vimrc, not .vim/plugin/*. See :help init
+set exrc
+
 au FileType vim set iskeyword+=. iskeyword+=/ iskeyword+=~
