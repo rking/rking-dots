@@ -1,0 +1,13 @@
+#!/bin/sh
+
+cd zu-output
+rm */*
+rmdir *.*
+
+INPUTS=$(pwd)/../zu-input/*.*
+for n in $INPUTS; do
+    BASENAME=$(basename $n)
+    [ -e $BASENAME ] || mkdir $BASENAME
+    echo $n
+done
+ls -l zu-output
