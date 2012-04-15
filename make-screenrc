@@ -7,7 +7,10 @@ touch $OUT
 [ ! -z "$SCREENESC" ]
 cat <<EOT >> $OUT
 shell zsh # is there any other?
+
 defflow off # turn off stupid flow-control (also see: stty -ixon in ~/.zshrc)
+maptimeout 0 # for getting rid of the delay of irssi's vim_mode.pl
+
 defscrollback 100000 # maybe more?
 altscreen on # restore window contents after "vim", etc.
 ignorecase on # for searches
