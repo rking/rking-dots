@@ -2,7 +2,7 @@
 EXE='wmctrl'
 behaviors = {
     '1' => [ %w(-s 0), %w(-a codeterm) ],
-    '2' => [ %w(-s 1), %w(-a Firefox) ],
+    '2' => [ %w(-s 1), %w(-a Pentadactyl) ],
     '3' => [ %w(-s 2), %w(-a Blender) ],
     '4' => [ %w(-s 3) ],
 }
