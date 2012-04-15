@@ -1,0 +1,5 @@
+#!/bin/sh
+F=/tmp/gistcat.$$
+cat > $F
+gistfile $F
+rm $F
