@@ -1,13 +1,16 @@
-#!/bin/sh
+#!/bin/sh -xe
 
+cd $(dirname $0)
+rm -rf zu-output/*.*
 cd zu-output
-rm */*
-rmdir *.*
 
 INPUTS=$(pwd)/../zu-input/*.*
 for n in $INPUTS; do
     BASENAME=$(basename $n)
     [ -e $BASENAME ] || mkdir $BASENAME
-    echo $n
+    (
+        cd $BASENAME
+        zu $n >1 2>2
+    )
 done
-ls -l zu-output
+ls -l *

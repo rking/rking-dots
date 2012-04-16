@@ -5,13 +5,8 @@
 # - http://... (with wget first)
 # - Plus build?
 # - These:
-#     .tar.gz
-#     .tar.bz2
-#     .tar.xz
-#     .tar
-#     .gz
-#     .bz2
-#     .xz
+#     .lzma (unlzma)
+#     .tlz (unlzma)
 #     ...?
 
 class Array
@@ -24,29 +19,70 @@ class Array
     end
 end
 
+def redwarn msg
+    warn "\e[31m#{msg}\e[0m"
+end
+
 ARGV.each do |f|
     if not File.exists? f
-        warn "'#{f}' doesn't seem to exist."
+        redwarn "'#{f}' doesn't seem to exist."
         next
     end
-    if f[/(.+)\.zip/]
-        basename = $1
-        full_path = File.expand_path f
-        if not basename
-            raise "Weird. #{f} did not match basename."
-        end
-        files = `zipinfo -1 "#{f}"`.split /\n/
-        if files.polite?
-            system 'unzip', f
+    full_path = File.expand_path f
+    basename = File.basename f
+    ext = File.extname f
+    simplename = basename.chomp ext
+    if '.tar' == File.extname(simplename)
+        simpename = simplename.chomp '.tar'
+        ext = '.tar' + ext
+    end
+
+    run_and_split = proc do |*cmd_and_args|
+        IO.popen(cmd_and_args.push full_path).read.split /\n/
+    end
+
+    files_list, extract_cmd = *(
+        case ext
+        when '.zip';
+            [ run_and_split['zipinfo', '-1'], %w(unzip) ]
+        when '.tar.gz', '.tgz'
+            [ run_and_split['tar', 'tzf'], %w(tar xzf) ]
+        when '.tar.bz2', '.tbz2'
+            [ run_and_split['tar', 'tjf'], %w(tar xjf) ]
+        when '.tar.xz', '.txz'
+            [ run_and_split['tar', 'tJf'], %w(tar xJf) ]
+        when '.gz', '.xz', '.bz2'
+            [
+                [ simplename ],
+                {
+                    '.gz' => %w(gunzip),
+                    '.xz' => %w(unxz),
+                    '.bz2' => %w(bunzip2),
+                }[ext]
+            ]
         else
-            puts "# Caught impoliteness. mkdir \e[34;1m#{basename}\e[0m/, then."
-            Dir.mkdir basename
-            Dir.chdir basename do
-                system 'unzip', full_path
-            end
+            redwarn "'#{f}' - Unknown extension. Doing nothing."
+            next
+        end)
+
+    extract = proc do
+        p(extract_cmd.push full_path)
+        if system *extract_cmd.push(full_path)
+            # Perhaps provide this as a flag?  I like getting rid of the
+            # archives files.
+            File.exist? f and File.unlink f
+        else
+            redwarn "`#{extract_cmd.join ' '} #{full_path}` failed (#{$?})."
         end
-        File.unlink f
+    end
+
+    if files_list.polite?
+        extract.call
     else
-        warn "'#{f}' - Unknown extension."
+        puts "# Caught impoliteness. mkdir \e[34;1m#{basename}\e[0m/, then."
+        Dir.mkdir basename
+        Dir.chdir basename do
+            extract.call
+        end
     end
 end
