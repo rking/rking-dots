@@ -46,11 +46,11 @@ ARGV.each do |f|
         when '.zip';
             [ run_and_split['zipinfo', '-1'], %w(unzip) ]
         when '.tar.gz', '.tgz'
-            [ run_and_split['tar', 'tzf'], %w(tar xzf) ]
+            [ run_and_split['tar', 'tzf'], %w(tar xvzf) ]
         when '.tar.bz2', '.tbz2'
-            [ run_and_split['tar', 'tjf'], %w(tar xjf) ]
+            [ run_and_split['tar', 'tjf'], %w(tar xvjf) ]
         when '.tar.xz', '.txz'
-            [ run_and_split['tar', 'tJf'], %w(tar xJf) ]
+            [ run_and_split['tar', 'tJf'], %w(tar xvJf) ]
         when '.gz', '.xz', '.bz2'
             [
                 [ simplename ],
@@ -66,13 +66,13 @@ ARGV.each do |f|
         end)
 
     extract = proc do
-        p(extract_cmd.push full_path)
-        if system *extract_cmd.push(full_path)
+        extract_cmd.push full_path
+        if system *extract_cmd
             # Perhaps provide this as a flag?  I like getting rid of the
             # archives files.
             File.exist? f and File.unlink f
         else
-            redwarn "`#{extract_cmd.join ' '} #{full_path}` failed (#{$?})."
+            redwarn "`#{extract_cmd.join ' '}` failed (#{$?})."
         end
     end
 
