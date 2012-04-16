@@ -14,7 +14,7 @@ map \$ :s/^#//g<cr>:noh<cr>
 map \1 :up<cr>
 map \2 :up<cr>:!perl -c -Ilib %<cr>
 map \3 :up<cr>:call RunLastT()<cr>
-map \4 :up<cr>:!make test<cr>
+map \4 :up<cr>:call MakeOrRakeOrWhatever()<cr>
 map \5 :up<cr>:!./%<cr>
 map \6 :up<cr>:!make all install<cr>
 map \7 :call ToggleSecondLang()<cr>
@@ -25,4 +25,16 @@ map + :e #<cr>
 map \h :up<cr>:call TryPerlCompile()<cr>
 
 map \gf :sp <cword><cr>
-map \c256 :let $TERM='xterm-256'<cr>:set t_Co=256<cr>:so ~/.inkpot.vim<cr>
+
+func! MakeOrRakeOrWhatever()
+    if filereadable('Makefile')
+        setlocal makeprg=make
+    elseif filereadable('Rakefile')
+        setlocal makeprg=rake
+    else
+        " I guess we run it, then.
+        !sh %
+        return
+    end
+    make
+endfunc
