@@ -1,0 +1,3 @@
+#!/bin/sh
+# Ssh somewhere then invoke `tmux-session shell`
+ssh -t "$@" 'tmux-session shell; zsh'
