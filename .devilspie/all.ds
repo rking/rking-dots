@@ -7,7 +7,9 @@
  )
 
 (if
- (is (application_name) "logwatcher")
+ (or
+     (is (application_name) "logwatcher")
+     (is (application_name) "gkrellm"))
  (begin
   (skip_tasklist)
   (pin)
