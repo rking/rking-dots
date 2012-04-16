@@ -1,0 +1,14 @@
+#!/bin/sh
+# Start or reattach to a session, using ~/.$1-tmux.conf
+THISSERV="tmux -2 -L $1"
+CONFFILE=~/.$1-tmux.conf
+
+[ -e $CONFFILE ] || (echo "No $CONFFILE found."; exit 1)
+
+$THISSERV list-sessions || \
+    $THISSERV -f $CONFFILE \
+        start-server\; \
+        source-file ~/.tmux.conf\; \
+        rename-session $1\; \
+
+$THISSERV attach -t $1
