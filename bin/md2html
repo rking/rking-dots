@@ -15,7 +15,8 @@ end.parse!
 md_name = ARGV[0]
 md = RDiscount.new open(md_name).read
 html_name = md_name.sub /(md)?$/, 'html'
-open(html_name, 'w').print %{\
+open(html_name, 'w') do |f|
+    f.print %{\
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -32,6 +33,7 @@ open(html_name, 'w').print %{\
 </body>
 </html>
 }
+end
 
 if options[:firefox]
     system('foxopen', html_name)
