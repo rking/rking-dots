@@ -10,7 +10,8 @@ mailterm
 codeterm
 logwatcher
 
-#xsetb -r
+# For auditory fanciness:
+(while `sleep 0.1`; do xsetb -r; done) &
 
 unclutter -idle 1 &
 
