@@ -12,11 +12,9 @@ install:
 	@echo -ne "\e[36mSymlinking ~/bin/*'s\e[0m: "
 	@for n in bin/*; do echo -n "$${n##bin/} "; ln -fs `pwd`/$$n ~/bin; done
 	@echo
-	@echo
-	@echo -e "\e[32mMaking ~/.screenrc\e[0m: "
 	([ ! -e ~/.localrc ] && \
-		echo -e 'export SCREENESC=a SCREENCOLOR=g' > ~/.localrc) || true
-	./make-screenrc
+		echo -e 'export TMUXESC=a TMUXCOLOR=green COLOR=32' \
+			> ~/.localrc) || true
 	@echo
 	@for n in ~/bin/* ~/.*; do \
 		([ -L $$n -a ! -e $$n ] && ( \
