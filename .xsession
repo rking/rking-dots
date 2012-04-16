@@ -10,11 +10,15 @@ mailterm
 codeterm
 logwatcher
 
+#xsetb -r
+
 unclutter -idle 1 &
 
 firefox-bin &
 devilspie 2>&1 | grep -v 'e_sexp_eval: assertion `f->tree != NULL' | \
     sed 's/.*/devilspie noise: [34m&[0m/' &
+
+rkwmctrl 1
 
 ck-launch-session # ConsoleKit stuff (needed for wicd)
 xfce4-session
