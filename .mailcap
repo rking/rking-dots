@@ -1,0 +1,7 @@
+# Interactive viewer
+text/html; w3m %s; needsterminal
+# non-interactive, basically text converter
+text/html; w3m -dump -T text/html %s; copiousoutput
+#text/html; links -force-html -dump -dump-charset utf-8 %s; copiousoutput
+image/*; rjkasciiview %s 2>&1
+
