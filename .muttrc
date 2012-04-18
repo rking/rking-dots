@@ -55,7 +55,7 @@ unignore \
     in-reply-to mail-followup-to \
     precedence x-mailer x-url \
     organization newsgroups x-newsgroups \
-    content-type
+    content-type delivered-to
 
 folder-hook spam push 'D.\n'
 
