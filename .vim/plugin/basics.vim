@@ -9,6 +9,6 @@ set encoding=utf-8 termencoding=utf-8 " digraph keymap=greek iminsert=0
 set modeline
 set notitle " was messing up wmctrl's ability to pick out a window.
 
-filetype plugin on
+filetype plugin indent on
 
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
