@@ -1,8 +1,9 @@
 #!/bin/zsh
 # Helpers for ssh-from-mobile-phone. Run ,h to see the options.
 ## Tips:
+## Install the "Hacker's Keyboard" app. It is much better.
+## Otherwise, it is faster to hit "12#" then a number/special than to longpress.
 ## Know your terminal keys: Ctrl+i, Ctrl+u ...
-## It is generally faster to hit "12#" then a number/special than to longpress.
 for dep in perl links; do
     which $dep > /dev/null || echo "Missing $dep, so some ,feature won't work."
 done
