@@ -1,3 +1,0 @@
-#!/bin/sh
-# ...I need to set up an overlay mechanism so stuff like this isn't everywhere.
-tmuxssh panoptic.com "$@"
