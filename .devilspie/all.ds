@@ -3,6 +3,7 @@
  (matches (application_name) "term$")
  (begin
   (pin)
+  (below)
  )
  )
 
@@ -13,6 +14,7 @@
  (begin
   (skip_tasklist)
   (pin)
+  (below)
  )
  )
 
@@ -20,7 +22,6 @@
  (is (application_name) "Firefox")
  (begin
   (set_workspace 2)
-  (above)
  )
  )
 
@@ -28,6 +29,5 @@
  (matches (application_name) "^Blender")
  (begin
   (set_workspace 3)
-  (above)
  )
  )
