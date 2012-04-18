@@ -3,6 +3,9 @@
 *VT100*foreground: gray90
 *VT100*background: black
 
+; http://jaymzworld.com/wiki/XTerm_double-click_word_selection
+*VT100*charClass: 33-126:48
+
 *VT100*Font: -misc-fixed-medium-r-semicondensed--13-*-*-*-*-*-iso10646-1
 *VT100*Font2: -efont-fixed-medium-r-normal-*-12-*-*-*-*-*-iso10646-1
 *VT100*Font3: -efont-fixed-medium-r-normal-*-14-*-*-*-*-*-iso10646-1
