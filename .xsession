@@ -2,8 +2,6 @@
 PATH=~/bin:$PATH
 source ~/.localrc
 
-ssh-add ~/.ssh/id_rsa
-
 #nvidia-settings -a InitialPixmapPlacement=0 -a GlyphCache=1 # XXX Maybe?
 
 mailterm
