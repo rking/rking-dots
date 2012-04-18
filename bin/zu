@@ -79,9 +79,9 @@ ARGV.each do |f|
     if files_list.polite?
         extract.call
     else
-        puts "# Caught impoliteness. mkdir \e[34;1m#{basename}\e[0m/, then."
-        Dir.mkdir basename
-        Dir.chdir basename do
+        puts "# Caught impoliteness. mkdir \e[34;1m#{simplename}\e[0m/, then."
+        Dir.mkdir simplename
+        Dir.chdir simplename do
             extract.call
         end
     end
