@@ -33,6 +33,7 @@
 " /home/rking/.vim/ftdetect/ruby.vim
 
 " this /only/ works if it's set in .vimrc, not .vim/plugin/*. See :help init
-set exrc
+" set exrc " Nah, it's too insecure. For a better solution, when I need it:
+"   https://github.com/MarcWeber/vim-addon-local-vimrc
 
 au FileType vim set iskeyword+=. iskeyword+=/ iskeyword+=~
