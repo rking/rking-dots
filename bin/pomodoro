@@ -3,5 +3,5 @@
 sleep 25m
 for n in `seq 1 4`; do
     echo -e '\a'
-    sleep .5
+    sleep .2
 done
