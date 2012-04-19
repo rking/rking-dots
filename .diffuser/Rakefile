@@ -1,0 +1,18 @@
+#!/usr/bin/env rake
+
+def sh_task cmd
+    str = cmd.join ' '
+    desc "Run #{str}"
+    task str.to_sym do
+        sh *cmd
+    end
+end
+
+def red str
+    "\e[31m#{str}\e[0m"
+end
+
+# mv test/input to .diffuser/input/zu
+# temporarily set it up and end with a big ls -l
+sh_task %w(echo --help)
+task :default => Rake::Task.tasks
