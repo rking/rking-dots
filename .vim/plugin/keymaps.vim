@@ -33,7 +33,8 @@ func! MakeOrRakeOrWhatever()
         setlocal makeprg=rake
     else
         " I guess we run it, then.
-        !sh %
+        " TODO: Make this work for other paths
+        !sh -c ./%
         return
     end
     make
