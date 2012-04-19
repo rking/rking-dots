@@ -1,0 +1,3 @@
+[submodule "diffuser"]
+	path = diffuser
+	url = git://github.com/sharpsaw/diffuser.git

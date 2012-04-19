@@ -1,0 +1,7 @@
+#!/bin/sh -xe
+# The Pomodoro Technique - http://www.pomodorotechnique.com/
+sleep 25m
+for n in `seq 1 4`; do
+    echo -e '\a'
+    sleep .5
+done
