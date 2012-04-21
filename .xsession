@@ -4,7 +4,7 @@ source ~/.localrc
 
 #nvidia-settings -a InitialPixmapPlacement=0 -a GlyphCache=1 # XXX Maybe?
 
-mailterm
+sshellterm
 codeterm
 logwatcher
 
