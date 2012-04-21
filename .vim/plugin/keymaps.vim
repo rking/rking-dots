@@ -15,7 +15,7 @@ map \1 :up<cr>
 map \2 :up<cr>:!perl -c -Ilib %<cr>
 map \3 :up<cr>:call RunLastT()<cr>
 map \4 :up<cr>:call MakeOrRakeOrWhatever()<cr>
-map \5 :up<cr>:!./%<cr>
+map \5 :up<cr>:call RunThis()<cr>
 map \6 :up<cr>:!make all install<cr>
 map \7 :call ToggleSecondLang()<cr>
 imap <f7> <esc>:call ToggleSecondLang()<cr>a
@@ -23,6 +23,9 @@ imap <f7> <esc>:call ToggleSecondLang()<cr>a
 map \d :.!echo -n 'date:    '; date<cr>
 map + :e #<cr>
 map \h :up<cr>:call TryPerlCompile()<cr>
+
+" Allow undo for Insert Mode ^u (thanks, osse!)
+inoremap <C-u> <C-g>u<C-u>
 
 map \gf :sp <cword><cr>
 
@@ -32,10 +35,21 @@ func! MakeOrRakeOrWhatever()
     elseif filereadable('Rakefile')
         setlocal makeprg=rake
     else
-        " I guess we run it, then.
-        " TODO: Make this work for other paths
-        !sh -c ./%
+        call RunThis()
         return
     end
     make
+endfunc
+
+func! RunThis()
+    " Otherwise, run it.
+    if filereadable('./'.expand('%'))
+        echo "a"
+        !./%
+    elseif filereadable(expand('%'))
+        echo "b"
+        !%
+    else
+        echo "Odd. Couldn't run ".expand('%')
+    end
 endfunc
