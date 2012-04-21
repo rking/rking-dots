@@ -8,9 +8,14 @@ install:
 	@echo
 	@echo
 	[ -e ~/bin ] || mkdir ~/bin
+	[ -e ~/local ] || mkdir ~/local
 	@echo
 	@echo -ne "\e[36mSymlinking ~/bin/*'s\e[0m: "
 	@for n in bin/*; do echo -n "$${n##bin/} "; ln -fs `pwd`/$$n ~/bin; done
+	@echo
+	@echo
+	[ -e ~/local/bin/hub ] || (echo "Building 'hub'" \
+	    && cd hub && rake install prefix=$$HOME/local)
 	@echo
 	([ ! -e ~/.localrc ] && \
 		echo -e 'export TMUXESC=a TMUXCOLOR=green COLOR=32' \
