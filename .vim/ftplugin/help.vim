@@ -1,6 +1,7 @@
 if &readonly
-    nnoremap <CR> <C-]>
-    nnoremap <BS> <C-O>
-    nnoremap <Down> /\('\<bar><bar>\)[^, <bar>]\{-1,}\1<CR>:nohl<cr>
-    nnoremap <Up> ?\('\<bar><bar>\)[^, <bar>]\{-1,}\1<CR>:nohl<cr>
+    nnoremap <silent><buffer> <Esc> :quit<CR>
+    nnoremap <silent><buffer> <CR> <C-]>
+    nnoremap <silent><buffer> <BS> <C-O>
+    nnoremap <silent><buffer> <Down> :call search('\(''\<bar><bar>\)[^, <bar>]\{-1,}\1', 'W')<CR>
+    nnoremap <silent><buffer> <Up> :call search('\(''\<bar><bar>\)[^, <bar>]\{-1,}\1', 'Wb')<CR>
 endif
