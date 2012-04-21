@@ -19,24 +19,25 @@ alias la='ls -la'
 alias standup='(echo -n "stand-up: "; randlist < ~/.st-haxors) | xclip'
 
 alias pmf='perl Makefile.PL install_base=~/local' 
+alias gemdoc='gem server & sleep 4; firefox-bin 0.0.0.0:8808'
 
 alias cdcfg="cd $CFGDIR"
 alias CDcfg="gitcd $CFGDIR && make"
-alias accessd="cd /var/log/apache-perl/; ls"
+
 alias vv='vim ~/.vimrc'
 alias vz='vim ~/.zshrc; source ~/.zshrc'
+viml='vim !! -l'
+
 alias tl='test-less'
 alias tlp='test-less --prove'
-type pinfo >&- && alias info=pinfo
 dict() { /usr/bin/dict -dall "$@" | less -F }
 kiss() { ~/bin/kiss "$@"; rehash }
 cd() { builtin cd "$@"; ~/bin/screentitle $(basename "$(pwd)")/; }
-# vim() { /usr/bin/vim "$@"; screentitle $PWD }
-viml='vim !! -l'
 
 s50() { convert -sample 50% $1 $1 }
 s75() { convert -sample 75% $1 $1 }
 
+type pinfo >&- && alias info=pinfo
 echo x | (grep x --color >/dev/null 2>&1) && alias grep='grep --color=auto'
 
 alias cj=clipjoin
