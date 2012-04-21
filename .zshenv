@@ -2,7 +2,7 @@ source ~/.localrc
 ulimit -c unlimited
 
 export \
-    PATH=~/bin:~/local/bin:/usr/local/bin:~/.rvm/bin:$PATH \
+    PATH=~/bin:~/local/bin:/usr/local/bin:~/local/gems/bin:$PATH \
     LD_LIBRARY_PATH=$HOME/local/lib \
     CPATH=$HOME/local/include \
     RUBY_LIB=$HOME/local/lib \
@@ -32,8 +32,13 @@ setopt \
     autoresume \
     cdablevars \
     correct \
+    completeinword \
     extendedglob \
     globdots \
+    extended_history \
+    incappend_history \
+    share_history \
+    histignorespace \
     histignoredups \
     longlistjobs \
     mailwarning \
@@ -45,10 +50,7 @@ setopt \
     pushdsilent \
     pushdtohome \
     rcquotes \
-    appendhistory \
-    completeinword \
     equals \
-    histignorespace \
     interactivecomments \
     nobadpattern \
     printexitvalue \
