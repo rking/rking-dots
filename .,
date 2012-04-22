@@ -12,8 +12,8 @@ alias ,.,='vim ~/., && source ~/.,' ## Edit and source dotcomma file
 ,g() { ## Google using links. Works with 0, 1, or many arguments.
   links "http://www.google.com/search?q=$*"
 }
-,M() { ## Configure & make install, passing $DOT_CONFIGURE_ARGS to ./configure
-  ./configure $DOT_CONFIGURE_ARGS && make install
+,M() { ## Configure & make install, passing $DOT_CONFIGURE_ARGS to ./configure, and using $MAKE_INSTALL_SU prepended to the 'make install' command.
+  ./configure $DOT_CONFIGURE_ARGS && $MAKE_INSTALL_SU make install
 }
 alias ,t='tmux-session shell'
 if [ ! -z "$ZSH_VERSION" ]; then
