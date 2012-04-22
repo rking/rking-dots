@@ -43,8 +43,10 @@ ARGV.each do |f|
 
     files_list, extract_cmd = *(
         case ext
-        when '.zip';
+        when '.zip'
             [ run_and_split['zipinfo', '-1'], %w(unzip) ]
+        when '.tar'
+            [ run_and_split['tar', 'tf'], %w(tar xvf) ]
         when '.tar.gz', '.tgz'
             [ run_and_split['tar', 'tzf'], %w(tar xvzf) ]
         when '.tar.bz2', '.tbz2'
