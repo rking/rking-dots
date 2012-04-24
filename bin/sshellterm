@@ -1,3 +1,4 @@
 #!/bin/sh
 # Start a terminal on the left, used for an ssh connection and such.
-uxterm -geom 80x78+500+1 -title sshellterm -e tmux-session sshell &
+terminal --title sshellterm --geometry=80x92+150+1 -e 'tmux-session sshell' &
+# Alternate: uxterm -geom 80x78+500+1 -title sshellterm -e tmux-session sshell &
