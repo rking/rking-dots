@@ -30,10 +30,12 @@ inoremap <C-u> <C-g>u<C-u>
 map \gf :sp <cword><cr>
 
 func! MakeOrRakeOrWhatever()
-    if filereadable('Makefile')
-        setlocal makeprg=make
-    elseif filereadable('Rakefile')
+    if filereadable('Rakefile')
         setlocal makeprg=rake
+    elseif filereadable('Makefile')
+        setlocal makeprg=make
+    elseif filereadable('build.xml')
+        setlocal makeprg=ant\ -emacs
     else
         call RunThis()
         return
