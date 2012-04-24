@@ -37,7 +37,6 @@ setopt \
     globdots \
     extended_history \
     incappend_history \
-    share_history \
     histignorespace \
     histignoredups \
     longlistjobs \
