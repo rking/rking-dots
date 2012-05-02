@@ -14,7 +14,8 @@ logwatcher
 
 unclutter -idle 1 &
 
-firefox-bin &
+firefox-bin -P default &
+firefox-bin -no-remote -P SMS &
 skype &
 
 devilspie 2>&1 | grep -v 'e_sexp_eval: assertion `f->tree != NULL' | \
