@@ -13,7 +13,8 @@ alias ,.,='vim ~/., && source ~/.,' ## Edit and source dotcomma file
   links "http://www.google.com/search?q=$*"
 }
 ,M() { ## Configure & make install, passing $DOT_CONFIGURE_ARGS to ./configure, and using $MAKE_INSTALL_SU prepended to the 'make install' command.
-  ./configure $DOT_CONFIGURE_ARGS && $MAKE_INSTALL_SU make install
+    ( [ -e configure ] || ./autogen.sh ) && \
+        ./configure $DOT_CONFIGURE_ARGS && $MAKE_INSTALL_SU make install
 }
 alias ,t='tmux-session shell'
 if [ ! -z "$ZSH_VERSION" ]; then

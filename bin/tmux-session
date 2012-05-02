@@ -14,4 +14,4 @@ $THISSERV list-sessions || \
         source-file ~/.tmux.conf\; \
         rename-session $1
 
-$THISSERV attach -t $1
+$THISSERV new-session -t $1

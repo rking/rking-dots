@@ -14,8 +14,10 @@ install:
 	@for n in bin/*; do echo -n "$${n##bin/} "; ln -fs `pwd`/$$n ~/bin; done
 	@echo
 	@echo
-	[ -e ~/local/bin/hub ] || (echo "Building 'hub'" \
-	    && cd hub && rake install prefix=$$HOME/local)
+	[ -e ~/local/bin/hub ] || ( \
+	    [ -e hub/Rakefile ] || git submodule update --init hub && \
+	    echo "Building 'hub'" && \
+	    cd hub && rake install prefix=$$HOME/local)
 	@echo
 	([ ! -e ~/.localrc ] && \
 		echo -e 'export TMUXESC=a TMUXCOLOR=green COLOR=32' \
