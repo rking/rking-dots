@@ -1,6 +1,8 @@
-; (debug)
+(debug)
 (if
- (matches (application_name) "term$")
+ (or
+     (matches (application_name) "term$")
+     (is (application_name) "Terminal"))
  (begin
   (pin)
   (below)
@@ -19,15 +21,25 @@
  )
 
 (if
- (is (application_name) "Firefox")
+ (matches (window_name) "Pentadactyl$")
  (begin
   (set_workspace 2)
  )
  )
 
 (if
- (matches (application_name) "^Blender")
+ (or
+    (matches (application_name) "^Blender")
+    (matches (application_name) "Eclipse SDK$"))
  (begin
   (set_workspace 3)
+ )
+ )
+
+(if
+ (or (matches (window_name) "Firefox$")
+   (matches (application_name) "Skype"))
+ (begin
+  (set_workspace 4)
  )
  )

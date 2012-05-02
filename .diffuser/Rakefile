@@ -1,5 +1,7 @@
 #!/usr/bin/env rake
 
+# TODO: require 'diffuserake'
+
 def sh_task cmd
     str = cmd.join ' '
     desc "Run #{str}"

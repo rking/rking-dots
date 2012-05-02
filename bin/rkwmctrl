@@ -3,7 +3,7 @@ EXE='wmctrl'
 behaviors = {
     '1' => [ %w(-s 0), %w(-a codeterm) ],
     '2' => [ %w(-s 1), %w(-a Pentadactyl) ],
-    '3' => [ %w(-s 2), %w(-a Blender) ],
+    '3' => [ %w(-s 2), %w(-F -a Blender) ],
     '4' => [ %w(-s 3) ],
 }
 ARGV.each do |behavior|
@@ -11,6 +11,6 @@ ARGV.each do |behavior|
         unless behaviors.has_key? behavior
     behaviors[behavior].each do |invocation|
         system EXE, *invocation \
-            or raise "Failed for #{EXE} #{invocation.join ' '}."
+            or warn "#$0 failed for: #{EXE} #{invocation.join ' '}."
     end
 end

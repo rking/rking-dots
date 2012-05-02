@@ -8,7 +8,8 @@ bindkey "^[." insert-last-word # Alt+'.' gives !$'s value.
 # TODO - more from https://dev.0x50.de/projects/ftzsh/repository/revisions/master/entry/zshrc.d
 
 # Completion stuff...
-autoload -U compinit; compinit
+autoload -Uz compinit; compinit
+autoload -Uz colors; colors
 for i in computil complist; zmodload zsh/$i
 zmodload zsh/complist
 fpath=(~/.zsh/completion $fpath)
@@ -38,3 +39,6 @@ zstyle ':completion:*:reserved-words' list-colors "=*=$color[red]"
 zstyle ':completion:*:*:*:*:hosts' list-colors "=*=$color[cyan];$color[bg-black]" 
 zstyle ':completion:*:*:*:*:users' list-colors "=*=$color[red];$color[bg-black]"
 zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) #([0-9]#) #([^ ]#)*=$color[cyan]=$color[yellow]=$color[green]"
+
+zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin \
+                             /usr/sbin /usr/bin /sbin /bin /usr/X11R6/bin 

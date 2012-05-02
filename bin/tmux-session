@@ -5,10 +5,13 @@ CONFFILE=~/.$1-tmux.conf
 
 [ -e $CONFFILE ] || (echo "No $CONFFILE found."; exit 1)
 
+unset TMUX # Big-boy mode: allows running even if nested. (Which easily occurs
+           # if you start one terminal from another.)
+
 $THISSERV list-sessions || \
     $THISSERV -f $CONFFILE \
         start-server\; \
         source-file ~/.tmux.conf\; \
-        rename-session $1\; \
+        rename-session $1
 
 $THISSERV new-session -t $1

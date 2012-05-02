@@ -1,6 +1,7 @@
 #!/bin/zsh
 PATH=~/bin:$PATH
 source ~/.localrc
+source /etc/profile.d/rvm.sh # Shouldn't be necessary. >=( I blame Gentoo.
 
 #nvidia-settings -a InitialPixmapPlacement=0 -a GlyphCache=1 # XXX Maybe?
 
@@ -9,11 +10,14 @@ codeterm
 logwatcher
 
 # For auditory fanciness:
-(while `sleep 0.1`; do xsetb -r || exit 1; done) &
+(while sleep 0.1; do xsetb -r || exit 1; done) &
 
 unclutter -idle 1 &
 
-firefox-bin &
+firefox-bin -P default &
+firefox-bin -no-remote -P SMS &
+skype &
+
 devilspie 2>&1 | grep -v 'e_sexp_eval: assertion `f->tree != NULL' | \
     sed 's/.*/devilspie noise: [34m&[0m/' &
 
