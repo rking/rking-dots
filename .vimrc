@@ -14,7 +14,6 @@
 " /home/rking/.vim/plugin/keymaps.vim
 " /home/rking/.vim/plugin/matchit.vim
 " /home/rking/.vim/plugin/quicklang.vim
-" /home/rking/.vim/plugin/cygwin-rxvt-broken-function-keys.vim
 " /home/rking/.vim/autoload/rubycomplete.vim
 " /home/rking/.vim/.VimballRecord
 " /home/rking/.vim/spell/en.utf-8.add.spl
@@ -54,7 +53,10 @@ fun! SetupVAM()
   exec 'set runtimepath+='.vam_install_path.'/vim-addon-manager'
 
   let want = []
-  let want += ['gitv']
+  let want += ['gitv'] " TODO: Learn this
+  let want += ['ack']
+  let want += ['github:Raimondi/vim-transpose-words']
+  let want += ['bad-whitespace']
   " TODO:
   " let want += [ 'vim-addon-rdebug' ]
   " let want += [ 'vim-ruby-debugger' ]
