@@ -1,0 +1,33 @@
+[alias]
+    st = status
+    ci = commit -v
+    br = branch
+    co = checkout
+    df = diff
+    dc = diff --cached
+    lg = log -p
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    ls = ls-files
+    w = whatchanged
+
+    # Show files ignored by git:
+    ign = ls-files -o -i --exclude-standard
+
+[color]
+    ui = auto
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
+    pager = true
+
+[core]
+	excludesfile = /home/rking/.gitignore
+
+# TODO - figure out how to make these not in here.
+[user]
+    email = rking@panoptic.com
+    name = rking
+[github]
+	user = ryanjosephking
