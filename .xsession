@@ -1,7 +1,6 @@
 #!/bin/zsh
 PATH=~/bin:$PATH
 source ~/.localrc
-source /etc/profile.d/rvm.sh # Shouldn't be necessary. >=( I blame Gentoo.
 
 #nvidia-settings -a InitialPixmapPlacement=0 -a GlyphCache=1 # XXX Maybe?
 
