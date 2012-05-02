@@ -2,7 +2,7 @@ source ~/.localrc
 ulimit -c unlimited
 
 export \
-    PATH=~/bin:~/local/bin:/usr/local/bin:~/local/gems/bin:$PATH \
+    PATH=~/bin:~/.rbenv/bin:~/local/bin:/usr/local/bin:~/local/gems/bin:$PATH \
     LD_LIBRARY_PATH=$HOME/local/lib \
     CPATH=$HOME/local/include \
     RUBY_LIB=$HOME/local/lib \
@@ -10,7 +10,12 @@ export \
     PERL5LIB=$HOME/local/lib/perl5 \
     EDITOR=vim VISUAL=vim \
 
+
+# echo "Grr.. manually setting LD_LIBRARY_PATH."
+export LD_LIBRARY_PATH=~/.rbenv/versions/1.9.3-p194/lib/:$LD_LIBRARY_PATH
+
 which ccache 2>&1 > /dev/null && export CC='ccache gcc'
+which rbenv 2>&1 > /dev/null && eval "$(rbenv init -)"
 
 FAV_ENCODING=${FAV_ENCODING:-en_US.utf8}
 if locale -a | grep -q $FAV_ENCODING; then
