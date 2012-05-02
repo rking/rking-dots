@@ -11,7 +11,7 @@
 
 (if
  (or
-     (is (application_name) "logwatcher")
+     (is (window_name) "logwatcher")
      (is (application_name) "gkrellm"))
  (begin
   (skip_tasklist)
