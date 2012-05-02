@@ -19,7 +19,10 @@ alias la='ls -la'
 alias standup='(echo -n "stand-up: "; randlist < ~/.st-haxors) | xclip'
 
 alias pmf='perl Makefile.PL install_base=~/local' 
-alias gemdoc='gem server & sleep 4; firefox-bin 0.0.0.0:8808'
+
+alias gemdoc='gem server & sleep 4; firefox-bin 0.0.0.0:8808; fg'
+alias be='bundle exec'
+alias bui='bundle install'
 
 alias cdcfg="cd $CFGDIR"
 alias CDcfg="gitcd $CFGDIR && make"
@@ -36,12 +39,7 @@ cd() { builtin cd "$@"; ~/bin/screentitle $(basename "$(pwd)")/; }
 s50() { convert -sample 50% $1 $1 }
 s75() { convert -sample 75% $1 $1 }
 
-if type pinfo >&-; then
-  alias info=pinfo
-  alias man='pinfo -m'
-else
-  echo "No pinfo. =("
-fi
+type pinfo >&- || alias info=pinfo
 
 echo x | (grep x --color >/dev/null 2>&1) && alias grep='grep --color=auto'
 
