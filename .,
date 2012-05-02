@@ -12,7 +12,7 @@ alias ,.,='vim ~/., && source ~/.,' ## Edit and source dotcomma file
 ,g() { ## Google using links. Works with 0, 1, or many arguments.
   links "http://www.google.com/search?q=$*"
 }
-alias ,M='./configure --prefix=$HOME/local && make install' ## Configure & make install, to ~/local
+alias ,M='( [ -e configure ] || ./autogen.sh ) && ./configure --prefix=$HOME/local && make install' ## Configure & make install, to ~/local
 alias ,t='tmux-session shell'
 if [ ! -z "$ZSH_VERSION" ]; then
   bindkey -s ¦ '|' ## (Also note: The Android keyboard uses a messed up pipe symbol, but we fix that.)
