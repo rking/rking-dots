@@ -4,3 +4,6 @@
 [submodule "hub"]
 	path = hub
 	url = git://github.com/defunkt/hub.git
+[submodule "xcompose"]
+	path = xcompose
+	url = https://github.com/kragen/xcompose.git
