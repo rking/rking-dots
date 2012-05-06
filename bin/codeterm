@@ -1,4 +1,4 @@
 #!/bin/sh
 # Start a terminal in the middle, used for code and such.
-terminal --title codeterm --geometry=80x92+650+1 -e 'tmux-session code' &
+terminal --title codeterm --geometry=80x72+650+1 -e 'tmux-session code' &
 # Alternate: uxterm -geom 80x78+1+1 -title codeterm -e tmux-session code &
