@@ -39,7 +39,11 @@ cd() { builtin cd "$@"; ~/bin/screentitle $(basename "$(pwd)")/; }
 s50() { convert -sample 50% $1 $1 }
 s75() { convert -sample 75% $1 $1 }
 
-type pinfo >&- || alias info=pinfo
+if type pinfo >&-; then
+    alias info=pinfo
+else
+    echo "No pinfo. ☹"
+fi
 
 echo x | (grep x --color >/dev/null 2>&1) && alias grep='grep --color=auto'
 
