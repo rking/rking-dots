@@ -5,3 +5,11 @@ def c m
     system 'vim', '-t', m
   end
 end
+def d c
+  require 'parsetree'
+  ParseTree.translate c
+end
+def s c
+  require 'ruby2ruby'
+  SexpProcessor.new.process d(c)
+end
