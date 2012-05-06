@@ -23,11 +23,11 @@
     pager = true
 
 [core]
-	excludesfile = /home/rking/.gitignore
+    excludesfile = /home/rking/.gitignore
 
 # TODO - figure out how to make these not in here.
 [user]
     email = rking@panoptic.com
     name = rking
 [github]
-	user = ryanjosephking
+    user = ryanjosephking
