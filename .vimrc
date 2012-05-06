@@ -57,6 +57,7 @@ fun! SetupVAM()
   let want += ['ack']
   let want += ['github:Raimondi/vim-transpose-words']
   let want += ['bad-whitespace']
+  let want += ['github:kien/ctrlp.vim']
   " TODO:
   " let want += [ 'vim-addon-rdebug' ]
   " let want += [ 'vim-ruby-debugger' ]
