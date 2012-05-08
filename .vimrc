@@ -52,12 +52,14 @@ fun! SetupVAM()
   call EnsureVamIsOnDisk(vam_install_path)
   exec 'set runtimepath+='.vam_install_path.'/vim-addon-manager'
 
-  let want = []
-  let want += ['gitv'] " TODO: Learn this
-  let want += ['ack']
-  let want += ['github:Raimondi/vim-transpose-words']
-  let want += ['bad-whitespace']
-  let want += ['github:kien/ctrlp.vim']
+  let want = [
+        \ 'ack',
+        \ 'bad-whitespace',
+        \ 'endwise',
+        \ 'gitv',
+        \ 'github:Raimondi/vim-transpose-words',
+        \ 'github:kien/ctrlp.vim',
+        \ ]
   " TODO:
   " let want += [ 'vim-addon-rdebug' ]
   " let want += [ 'vim-ruby-debugger' ]
