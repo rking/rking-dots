@@ -23,8 +23,8 @@ firefox-bin -P default &
 # firefox-bin -no-remote -P SMS &
 skype &
 
-devilspie 2>&1 | grep -v 'e_sexp_eval: assertion `f->tree != NULL' | \
-    sed 's/.*/devilspie noise: [34m&[0m/' &
+(sleep 8; devilspie 2>&1 | grep -v 'e_sexp_eval: assertion `f->tree != NULL' | \
+    sed 's/.*/devilspie noise: [34m&[0m/') &
 
 rkwmctrl 1
 
