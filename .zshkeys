@@ -1,3 +1,4 @@
+# echo before .zshkeys: $PATH
 bindkey -v # vi keys
 bindkey "^P" vi-up-line-or-history
 bindkey "^N" vi-down-line-or-history
@@ -42,3 +43,4 @@ zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) #([0-9]#) #([^ ]#)*
 
 zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin \
                              /usr/sbin /usr/bin /sbin /bin /usr/X11R6/bin 
+# echo after .zshkeys: $PATH
