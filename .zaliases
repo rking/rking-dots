@@ -1,4 +1,5 @@
 #!/bin/zsh
+# echo before .zaliases: $PATH
 export CFGDIR=~/src/config
 showbanner() { [ -e .banner ] && cat .banner }
 gitcd() {
@@ -34,7 +35,7 @@ alias tl='test-less'
 alias tlp='test-less --prove'
 dict() { /usr/bin/dict -dall "$@" | less -F }
 kiss() { ~/bin/kiss "$@"; rehash }
-cd() { builtin cd "$@"; ~/bin/screentitle $(basename "$(pwd)")/; }
+# cd() { builtin cd "$@"; ~/bin/screentitle $(basename "$(pwd)")/; }
 
 s50() { convert -sample 50% $1 $1 }
 s75() { convert -sample 75% $1 $1 }
@@ -52,3 +53,4 @@ alias cb=clipbrowse
 alias ce=clipedit
 
 source ~/., # run ,h for help
+# echo after .zaliases: $PATH
