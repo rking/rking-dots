@@ -1,2 +1,4 @@
 .netrwhist
 vim-addons
+bundle
+undodir
