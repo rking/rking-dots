@@ -7,3 +7,6 @@
 [submodule "xcompose"]
 	path = xcompose
 	url = https://github.com/kragen/xcompose.git
+[submodule "zsh-git-prompt"]
+	path = zsh-git-prompt
+	url = git://github.com/olivierverdier/zsh-git-prompt.git
