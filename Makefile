@@ -9,6 +9,7 @@ install:
 	@echo
 	[ -e ~/bin ] || mkdir ~/bin
 	[ -e ~/local ] || mkdir ~/local
+	[ -e ~/.zsh ] || mkdir ~/.zsh
 	@echo
 	@echo -ne "\e[36mSymlinking ~/bin/*'s\e[0m: "
 	@for n in bin/*; do echo -n "$${n##bin/} "; ln -fs `pwd`/$$n ~/bin; done
@@ -18,6 +19,12 @@ install:
 	    [ -e hub/Rakefile ] || git submodule update --init hub && \
 	    echo "Building 'hub'" && \
 	    cd hub && rake install prefix=$$HOME/local)
+	@echo
+	@echo
+	[ -e ~/.zsh/git-prompt ] || mkdir ~/.zsh/git-prompt
+	ln -fs `pwd`/zsh-git-prompt/gitstatus.py ~/.zsh/git-prompt/
+	ln -fs `pwd`/zsh-git-prompt/zshrc.sh ~/.zsh-git-prompt
+	# ...then this ↑ is referenced in ~/.zshenv
 	@echo
 	([ ! -e ~/.localrc ] && \
 		echo -e 'export TMUXESC=a TMUXCOLOR=green COLOR=32' \
