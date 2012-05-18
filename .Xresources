@@ -1,37 +1,115 @@
-*VT100*metaSendsEscape: true
+! rxvt-unicode FTW ! ——————————————————————————————————————————
+URxvt*font: xft:Liberation Mono:pixelsize=14:antialias=true:hinting=true
+URxvt*boldFont: xft:Liberation Mono:bold:pixelsize=14:antialias=true:hinting=true
+URxvt*italicFont: xft:Liberation Mono:italic:pixelsize=14:antialias=true:hinting=true
+URxvt*secondaryWheel: true
+!cirwins: URxvt*font: xft:Monospace-8,xft:VL\ Gothic,xft:Code2000
+!cirwins: !URxvt*italicFont: xft:Bitstream Vera Sans Mono:italic:autohint=true
 
-*VT100*foreground: gray90
-*VT100*background: black
+! legit stuff (thanks cirwin!)
+URxvt.perl-ext-common: default,selection-autotransform,matcher
+! git diffs
+URxvt.selection-autotransform.0: s|^[ab]/||
+! dies
+! URxvt.selection-autotransform.1: s|:([0-9]+)(:(in)?)?$| +$1|
 
-; http://jaymzworld.com/wiki/XTerm_double-click_word_selection
-*VT100*charClass: 33-126:48
+URxvt.matcher.button: 1
+URxvt.urlLauncher: firefox
 
-*VT100*Font: -misc-fixed-medium-r-semicondensed--13-*-*-*-*-*-iso10646-1
-*VT100*Font2: -efont-fixed-medium-r-normal-*-12-*-*-*-*-*-iso10646-1
-*VT100*Font3: -efont-fixed-medium-r-normal-*-14-*-*-*-*-*-iso10646-1
-*VT100*Font4: -efont-fixed-medium-r-normal-*-16-*-*-*-*-*-iso10646-1
-*VT100*Font5: -misc-fixed-medium-r-normal--18-*-*-*-*-*-iso10646-1
-*VT100*Font6: -efont-fixed-medium-r-normal-*-24-*-*-*-*-*-iso10646-1
+Xft.dpi: 96
+Xft.antialias: true
+Xft.rgba: rgb
+Xft.hinting: true
+Xft.hintstyle: hintslight
+
+URxvt.depth: 32
+URxvt.geometry: 90x30
+URxvt.transparent: false
+URxvt.fading: 0
+! URxvt.urgentOnBell: true
+URxvt.loginShell: true
+URxvt.saveLines: 50
+URxvt.internalBorder: 3
+URxvt.lineSpace: 0
+
+! Fix font space !rjk: ?
+URxvt*letterSpace: -1
+
+! Scrollbar
+URxvt.scrollStyle: rxvt
+URxvt.scrollBar: false
+
+! Cursor
+URxvt.cursorBlink: true
+URxvt.cursorColor: #657b83
+URxvt.cursorUnderline: false
+
+! Pointer
+URxvt.pointerBlank: true
+
+urxvt*foreground: #f2f2f2
+urxvt*background: #101010
+
+!black
+URxvt*color0:      #000000
+URxvt*color8:      #555753
+!red
+URxvt*color1:      #CC0000
+URxvt*color9:      #EF2929
+!green
+URxvt*color2:      #4E9A06
+URxvt*color10:     #8AE234
+!yellow
+URxvt*color3:      #C4A000
+URxvt*color11:     #FCE94F
+!blue
+URxvt*color4:      #3465A4
+URxvt*color12:     #729FCF
+!magenta
+URxvt*color5:      #75507B
+URxvt*color13:     #AD7FA8
+!cyan
+URxvt*color6:      #06989A
+URxvt*color14:     #34E2E2
+!white
+URxvt*color7:      #D3D7CF
+URxvt*color15:     #ECEDEE
+
+! xterm stuff —————————————————————————————————————————————————
+xterm*metaSendsEscape: true
+
+xterm*foreground: gray90
+xterm*background: black
+
+! http://jaymzworld.com/wiki/XTerm_double-click_word_selection
+xterm*charClass: 33-126:48
+
+xterm*Font: -misc-fixed-medium-r-semicondensed--13-*-*-*-*-*-iso10646-1
+xterm*Font2: -efont-fixed-medium-r-normal-*-12-*-*-*-*-*-iso10646-1
+xterm*Font3: -efont-fixed-medium-r-normal-*-14-*-*-*-*-*-iso10646-1
+xterm*Font4: -efont-fixed-medium-r-normal-*-16-*-*-*-*-*-iso10646-1
+xterm*Font5: -misc-fixed-medium-r-normal--18-*-*-*-*-*-iso10646-1
+xterm*Font6: -efont-fixed-medium-r-normal-*-24-*-*-*-*-*-iso10646-1
 
 #define RjkYellow #bbbb88
 #define RjkBlue #3333bf
 #define RjkGreen #19bf3a
 
-*VT100*color0:Grey20
-*VT100*color1:FireBrick
-*VT100*color2:RjkGreen
-*VT100*color3:RjkYellow
-*VT100*color4:RjkBlue
-*VT100*color5:Plum
-*VT100*color6:LightSkyBlue
-*VT100*color7:White
-*VT100*color8:Grey50
-*VT100*color9:Orange
-*VT100*color10:RjkGreen
-*VT100*color11:RjkYellow
-*VT100*color12:RjkBlue
-*VT100*color13:Plum
-*VT100*color14:LightSkyBlue
-*VT100*color15:White
-*VT100*colorBD:Orange
-*VT100*colorUL:PaleGreen
+xterm*color0:Grey20
+xterm*color1:FireBrick
+xterm*color2:RjkGreen
+xterm*color3:RjkYellow
+xterm*color4:RjkBlue
+xterm*color5:Plum
+xterm*color6:LightSkyBlue
+xterm*color7:White
+xterm*color8:Grey50
+xterm*color9:Orange
+xterm*color10:RjkGreen
+xterm*color11:RjkYellow
+xterm*color12:RjkBlue
+xterm*color13:Plum
+xterm*color14:LightSkyBlue
+xterm*color15:White
+xterm*colorBD:Orange
+xterm*colorUL:PaleGreen
