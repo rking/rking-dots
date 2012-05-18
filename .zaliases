@@ -9,7 +9,8 @@ gitcd() {
     git status
 }
 conceive() { command conceive "$@"; rehash }
-emerge() { sudo emerge "$@"; rehash }
+emerge() { $EMERGE_MAYBE_SUDO emerge "$@"; rehash }
+alias euses='euses --colour'
 
 for n in mv cp man svn git; do alias $n="nocorrect $n"; done
 [ -x ~/local/bin/hub ] && alias git=~/local/bin/hub
@@ -20,6 +21,7 @@ alias la='ls -la'
 alias standup='(echo -n "stand-up: "; randlist < ~/.st-haxors) | xclip'
 
 alias pmf='perl Makefile.PL install_base=~/local' 
+cd-pm() { cd $(dirname $(perldoc -l $1)) }
 
 alias gemdoc='gem server & sleep 4; firefox-bin 0.0.0.0:8808; fg'
 alias be='bundle exec'
@@ -43,7 +45,7 @@ s75() { convert -sample 75% $1 $1 }
 if type pinfo >&-; then
     alias info=pinfo
 else
-    echo "No pinfo. ☹"
+    echo "No pinfo. ☹̆"
 fi
 
 echo x | (grep x --color >/dev/null 2>&1) && alias grep='grep --color=auto'
