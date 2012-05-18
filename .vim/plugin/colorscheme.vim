@@ -1,2 +1,1 @@
-set t_Co=256
-colorscheme inkpot
+colorscheme ir_black " http://blog.toddwerth.com/entries/8
