@@ -30,6 +30,7 @@
 (if
  (or
     (matches (application_name) "^Blender")
+    (matches (application_name) "Thunderbird")
     (matches (application_name) "Eclipse SDK$"))
  (begin
   (set_workspace 3)
