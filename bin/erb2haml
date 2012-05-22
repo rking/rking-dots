@@ -1,0 +1,6 @@
+#!/bin/sh -xe
+gem install hpricot ruby_parser
+for i in `find app/views/ -name '*.erb'`; do
+    html2haml -e $i ${i%erb}haml
+    rm $i
+done
