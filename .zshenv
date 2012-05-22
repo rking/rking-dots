@@ -7,14 +7,8 @@ export \
     CPATH=$HOME/local/include \
     RUBY_LIB=$HOME/local/lib \
     PERL5LIB=$HOME/local/lib/perl5 \
+    PERL_MM_OPT=--sudo \
     EDITOR=vim VISUAL=vim \
-
-if [[ -s $HOME/.rvm/scripts/rvm ]]; then
-#    source $HOME/.rvm/scripts/rvm
-#    PATH=~/.rvm/bin:$PATH
-else
-    echo 'No rvm. Might want to: curl -L get.rvm.io | bash'
-fi
 
 which ccache 2>&1 > /dev/null && export CC='ccache gcc'
 
@@ -36,6 +30,7 @@ fi
 
 [ -e /usr/lib/debug ] && export LD_LIBRARY_PATH=!:2:$LD_LIBRARY_PATH
 export HISTSIZE=100000 HISTFILE=~/.zsh_history SAVEHIST=100000
+alias dwdiff='dwdiff -c' # color
 eval $(dircolors)
 export ZLS_COLORS=$LS_COLORS
 setopt \
