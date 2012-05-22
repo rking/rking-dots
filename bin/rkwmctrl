@@ -3,7 +3,7 @@ EXE='wmctrl'
 behaviors = {
     '1' => [ %w(-s 0), %w(-a codeterm) ],
     '2' => [ %w(-s 1), %w(-a Pentadactyl) ],
-    '3' => [ %w(-s 2), %w(-F -a Blender) ],
+    '3' => [ %w(-s 2), %w(-a Thunderbird), %w(-a ingyterm) ],
     '4' => [ %w(-s 3) ],
 }
 ARGV.each do |behavior|
