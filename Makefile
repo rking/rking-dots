@@ -15,6 +15,11 @@ install:
 	@for n in bin/*; do echo -n "$${n##bin/} "; ln -fs `pwd`/$$n ~/bin; done
 	@echo
 	@echo
+	@echo -ne "\e[36mInstalling XCompose\e[0m: "
+	( cd xcompose && ./configure && make full )
+	@echo
+	@echo
+	@echo -ne "\e[36mInstalling zsh-git-prompt\e[0m: "
 	[ -e ~/.zsh/git-prompt ] || mkdir ~/.zsh/git-prompt
 	ln -fs `pwd`/zsh-git-prompt/gitstatus.py ~/.zsh/git-prompt/
 	ln -fs `pwd`/zsh-git-prompt/zshrc.sh ~/.zsh-git-prompt
@@ -36,3 +41,6 @@ uninstall:
 		[ -L $$INST ] && (rm $$INST && echo -ne "$$INST"); \
 		done
 	@echo -e "\n\n=~("
+
+deps:
+	emerge dev-vcs/tig
