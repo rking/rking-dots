@@ -1,0 +1,4 @@
+#!/bin/sh -xe
+OUT=/tmp/haml$$.html
+haml "$@" > $OUT
+foxopen $OUT
