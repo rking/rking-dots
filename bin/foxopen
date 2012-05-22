@@ -1,5 +1,7 @@
 #!/bin/sh
 # Open in a Firefox tab, and expands the current file as a file:// if needed.
 URL=$1
-[[ -e $URL ]] && URL="file://`pwd`/$URL"
+[[ -e $URL ]] && (
+    [[ -e "`pwd`/$URL" ]] && URL="file://`pwd`/$URL" || URL="file://$URL"
+)
 firefox-bin "$URL"
