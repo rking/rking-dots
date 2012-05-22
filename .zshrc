@@ -4,5 +4,6 @@ umask 022
 source ~/.zaliases
 source ~/.zshkeys
 stty -ixon
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 [ -e ~/.afterlocalrc ] && source ~/.afterlocalrc
 # echo after .zshrc: $PATH
