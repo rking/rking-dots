@@ -3,7 +3,7 @@
 	url = git://github.com/sharpsaw/diffuser.git
 [submodule "xcompose"]
 	path = xcompose
-	url = git@rkingithub:ryanjosephking/xcompose.git
+	url = git@github.com:ryanjosephking/xcompose.git
 [submodule "zsh-git-prompt"]
 	path = zsh-git-prompt
 	url = git://github.com/olivierverdier/zsh-git-prompt.git
