@@ -7,3 +7,6 @@
 [submodule "zsh-git-prompt"]
 	path = zsh-git-prompt
 	url = git://github.com/olivierverdier/zsh-git-prompt.git
+[submodule "reval.vim"]
+	path = reval.vim
+	url = git@github.com:ryanjosephking/reval.vim

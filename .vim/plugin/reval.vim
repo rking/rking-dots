@@ -1,1 +1,1 @@
-/home/rking/src/reval.vim/reval.vim
+../../reval.vim/reval.vim
