@@ -1,6 +1,20 @@
 #!/bin/zsh
-# echo before .zaliases: $PATH
-export CFGDIR=~/src/config
+alias cdcfg="cd $DOTDOTDOT_ROOT"
+alias CDcfg="gitcd $DOTDOTDOT_ROOT && ... install"
+alias vv='vim ~/.vimrc'
+alias vz='vim ~/.zshrc; exec zsh'
+for n in mv cp man svn git; do alias $n="nocorrect $n"; done
+conceive() { command conceive "$@"; rehash }
+
+alias pmf='perl Makefile.PL install_base=~/local'
+cd-pm() { cd $(dirname $(perldoc -l $1)) }
+alias tl='test-less'
+alias tlp='test-less --prove'
+
+alias gemdoc='gem server & sleep 4; firefox-bin 0.0.0.0:8808; fg'
+alias be='bundle exec'
+alias bui='bundle install'
+
 showbanner() { [ -e .banner ] && cat .banner }
 gitcd() {
     cd $1
@@ -8,33 +22,18 @@ gitcd() {
     git pull
     git status
 }
-conceive() { command conceive "$@"; rehash }
+
 emerge() { $EMERGE_MAYBE_SUDO emerge "$@"; rehash }
 alias euses='euses --colour'
 
-for n in mv cp man svn git; do alias $n="nocorrect $n"; done
 [ -x ~/local/bin/hub ] && alias git=~/local/bin/hub
+
 alias ls='ls --classify --color=auto'
 alias ll='ls -l'
 alias la='ls -la'
 
 alias standup='(echo -n "stand-up: "; randlist < ~/.st-haxors) | xclip'
 
-alias pmf='perl Makefile.PL install_base=~/local' 
-cd-pm() { cd $(dirname $(perldoc -l $1)) }
-
-alias gemdoc='gem server & sleep 4; firefox-bin 0.0.0.0:8808; fg'
-alias be='bundle exec'
-alias bui='bundle install'
-
-alias cdcfg="cd $CFGDIR"
-alias CDcfg="gitcd $CFGDIR && make"
-
-alias vv='vim ~/.vimrc'
-alias vz='vim ~/.zshrc; exec zsh'
-
-alias tl='test-less'
-alias tlp='test-less --prove'
 dict() { /usr/bin/dict -dall "$@" | less -F }
 kiss() { ~/bin/kiss "$@"; rehash }
 # cd() { builtin cd "$@"; ~/bin/screentitle $(basename "$(pwd)")/; }
@@ -55,4 +54,3 @@ alias cb=clipbrowse
 alias ce=clipedit
 
 source ~/., # run ,h for help
-# echo after .zaliases: $PATH
