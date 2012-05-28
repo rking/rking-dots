@@ -1,3 +1,5 @@
+See: http://github.com/ingydotnet/rkingy-dots for a more complete use.
+
 The Idea
 --------
 
