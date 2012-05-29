@@ -20,4 +20,6 @@ alias ,t='tmux-session shell'
 if [ ! -z "$ZSH_VERSION" ]; then
   bindkey -s ¦ '|' ## (Also note: The Android keyboard uses a messed up pipe symbol, but we fix that.)
 fi
-,cd() { eval $(echo "$@" | perl -0400 -e '$_ = quotemeta(<>); s|,|/|g; print "echo cd $_"') } ## chdir, but s|,|/|g so you can type the path more quicklyer.
+,cd() {
+    eval $(echo "$@" | perl -0400 -e '$_ = quotemeta(<>); s|,|/|g; print "echo cd $_"')
+} ## chdir, but s|,|/|g so you can type the path more quicklyer.
