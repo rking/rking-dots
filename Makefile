@@ -1,5 +1,6 @@
 install:
 	[ -e ~/local ] || mkdir ~/local
+	[ -e ~/.zsh ] || mkdir ~/.zsh
 	@echo
 	@echo
 	@echo -ne "\e[36mInstalling XCompose\e[0m: "
