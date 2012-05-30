@@ -9,7 +9,7 @@ install:
 	@echo
 	perl -MTerm::ExtendedColor -e 1 || ( \
 	    echo 'Installing Term::ExtendedColor for ls++'; \
-	    cpanm Term::ExtendedColor )
+	    echo 'Try: cpanm Term::ExtendedColor' )
 	ln -fs `pwd`/ls--/ls++ ~/bin/
 	@echo
 	@/bin/echo -ne "\e[36mInstalling zsh-git-prompt\e[0m: "
