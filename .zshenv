@@ -1,6 +1,41 @@
 source ~/.localrc
+
+source ~/.../lib/path-manip.sh # for path-prepend, etc.
+
+setopt \
+    autocd \
+    autolist \
+    autopushd \
+    autoresume \
+    cdablevars \
+    correct \
+    completeinword \
+    extendedglob \
+    globdots \
+    extended_history \
+    incappend_history \
+    histignorespace \
+    histignoredups \
+    longlistjobs \
+    mailwarning \
+    noclobber \
+    noignoreeof \
+    nolistbeep \
+    notify \
+    pushdminus \
+    pushdsilent \
+    pushdtohome \
+    rcquotes \
+    equals \
+    interactivecomments \
+    nobadpattern \
+    printexitvalue \
+
+for n in ~/.sh/*; source $n || echo "Trouble sourcing: $n"
+
 ulimit -c unlimited
 
+# TODO: path-prependify
 export \
     PATH=~/bin:~/local/bin:/usr/local/bin:$PATH \
     LD_LIBRARY_PATH=$HOME/local/lib \
@@ -33,34 +68,4 @@ export HISTSIZE=100000 HISTFILE=~/.zsh_history SAVEHIST=100000
 alias dwdiff='dwdiff -c' # color
 eval $(dircolors)
 export ZLS_COLORS=$LS_COLORS
-setopt \
-    autocd \
-    autolist \
-    autopushd \
-    autoresume \
-    cdablevars \
-    correct \
-    completeinword \
-    extendedglob \
-    globdots \
-    extended_history \
-    incappend_history \
-    histignorespace \
-    histignoredups \
-    longlistjobs \
-    mailwarning \
-    noclobber \
-    noignoreeof \
-    nolistbeep \
-    notify \
-    pushdminus \
-    pushdsilent \
-    pushdtohome \
-    rcquotes \
-    equals \
-    interactivecomments \
-    nobadpattern \
-    printexitvalue \
-
-
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
