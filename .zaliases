@@ -1,8 +1,16 @@
 #!/bin/zsh
+
+# TODO: Pull these into their right *-dot places.
+
+cd() {
+    builtin cd "$@"
+    [ 0 != "$LSCD" ] && type ls++ >&- && ls++ || true
+}
+
 alias cdcfg="cd $DOTDOTDOT_ROOT"
 alias CDcfg="gitcd $DOTDOTDOT_ROOT && ... install"
 alias vv='vim ~/.vimrc'
-alias vz='vim ~/.zshrc; exec zsh'
+alias vz='vim ~/.zshrc; exec zsh'c
 for n in mv cp man svn git; do alias $n="nocorrect $n"; done
 conceive() { command conceive "$@"; rehash }
 

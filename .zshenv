@@ -41,7 +41,7 @@ export \
     LD_LIBRARY_PATH=$HOME/local/lib \
     CPATH=$HOME/local/include \
     RUBY_LIB=$HOME/local/lib \
-    PERL5LIB=$HOME/local/lib/perl5 \
+    PERL5LIB=$HOME/local/lib/perl5:$HOME/perl5/lib/perl5/ \
     PERL_MM_OPT=--sudo \
     EDITOR=vim VISUAL=vim \
 
