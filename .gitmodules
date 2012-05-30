@@ -10,3 +10,6 @@
 [submodule "reval.vim"]
 	path = reval.vim
 	url = git@github.com:ryanjosephking/reval.vim
+[submodule "ls--"]
+	path = ls--
+	url = https://github.com/trapd00r/ls--/
