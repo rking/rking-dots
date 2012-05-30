@@ -23,7 +23,13 @@ def redwarn msg
     warn "\e[31m#{msg}\e[0m"
 end
 
+$delete_afterward = false
+
 ARGV.each do |f|
+    if '-d' == f
+      $delete_afterward = true
+      next
+    end
     if not File.exists? f
         redwarn "'#{f}' doesn't seem to exist."
         next
@@ -70,9 +76,9 @@ ARGV.each do |f|
     extract = proc do
         extract_cmd.push full_path
         if system *extract_cmd
-            # Perhaps provide this as a flag?  I like getting rid of the
-            # archives files.
-            File.exist? f and File.unlink f
+            if $delete_afterward
+              File.exist? full_path and File.unlink full_path
+            end
         else
             redwarn "`#{extract_cmd.join ' '}` failed (#{$?})."
         end
