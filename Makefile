@@ -1,6 +1,5 @@
 install:
-	[ -e ~/local ] || mkdir ~/local
-	[ -e ~/.zsh ] || mkdir ~/.zsh
+	for dir in ~/bin ~/local ~/.zsh; do mkdir -p $$dir; done
 	@echo
 	@echo
 	@/bin/echo -ne "\e[36mInstalling XCompose\e[0m: "
