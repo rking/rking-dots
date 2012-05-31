@@ -2,5 +2,6 @@
 type keychain 2>&1 > /dev/null &&
     keychain -q ~/.ssh/*id_?sa &&
     . ~/.keychain/$HOST-sh &&
-    . ~/.keychain/$HOST-sh-gpg
+    [ -e ~/.keychain/$HOST-sh-gpg ] &&
+        . ~/.keychain/$HOST-sh-gpg
 # echo after $0: $PATH
