@@ -1,7 +1,7 @@
 ! rxvt-unicode FTW ! ——————————————————————————————————————————
-URxvt*font: xft:Liberation Mono:pixelsize=14:antialias=true:hinting=true
-URxvt*boldFont: xft:Liberation Mono:bold:pixelsize=14:antialias=true:hinting=true
-URxvt*italicFont: xft:Liberation Mono:italic:pixelsize=14:antialias=true:hinting=true
+URxvt*font: xft:Liberation Mono:pixelsize=10:antialias=true:hinting=true
+URxvt*boldFont: xft:Liberation Mono:bold:pixelsize=10:antialias=true:hinting=true
+URxvt*italicFont: xft:Liberation Mono:italic:pixelsize=10:antialias=true:hinting=true
 URxvt*secondaryWheel: true
 !cirwins: URxvt*font: xft:Monospace-8,xft:VL\ Gothic,xft:Code2000
 !cirwins: !URxvt*italicFont: xft:Bitstream Vera Sans Mono:italic:autohint=true
