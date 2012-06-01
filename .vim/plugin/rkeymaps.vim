@@ -1,12 +1,10 @@
 au BufNewFile,BufRead *.t set ft=perl
-au BufNewFile,BufRead * silent !screentitle $(basename %)
 
-map \] :silent up<UP><CR>
-map \\ :silent noh<cr>:set nopaste nolist<cr>
 map \p :set paste<cr>
 map \v :!vim .vimrc<cr>:so .vimrc<cr>
 map \V :!vim ~/.vimrc<cr>:so ~/.vimrc<cr>
 map \vf :!vim <cword><cr>:so <cword><cr>
+map \gf :sp <cword><cr>
 
 map \# :s/^/#/g<cr>:silent noh<cr>
 map \$ :s/^#//g<cr>:silent noh<cr>
@@ -21,12 +19,9 @@ map \7 :silent call ToggleSecondLang()<cr>
 imap <f7> <esc>:call ToggleSecondLang()<cr>a
 
 map \d :.!echo -n 'date:    '; date<cr>
-map + :e #<cr>
 
 " Allow undo for Insert Mode ^u (thanks, osse!)
 inoremap <C-u> <C-g>u<C-u>
-
-map \gf :sp <cword><cr>
 
 func! MakeOrRakeOrWhatever()
     if filereadable('Rakefile')
