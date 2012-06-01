@@ -1,7 +1,19 @@
-#!/bin/sh
+#!/bin/bash
 # Open in a Firefox tab, and expands the current file as a file:// if needed.
 URL=$1
-[[ -e $URL ]] && (
-    [[ -e "`pwd`/$URL" ]] && URL="file://`pwd`/$URL" || URL="file://$URL"
-)
-firefox-bin "$URL"
+if [[ -e $URL ]]; then
+    if [[ -e "`pwd`/$URL" ]]; then
+       URL="file://`pwd`/$URL"
+    else
+        URL="file://$URL"
+    fi
+fi
+if type firefox 2>&1 >/dev/null; then
+    FOX=firefox
+elif type firefox-bin 2>&1 >/dev/null; then
+    FOX=firefox-bin
+else
+    echo "No firefox found. =("
+fi
+echo $FOX '"'$URL'"'
+$FOX "$URL"
