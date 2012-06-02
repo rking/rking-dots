@@ -4,7 +4,8 @@
 
 cd() {
     builtin cd "$@"
-    [ 0 != "$LSCD" ] && type ls++ >&- && ls++ || true
+    local lspp=~/.../src/rking-dots/ls--/ls++
+    [ -x $lspp ] && $lspp || true
 }
 
 alias cdcfg="cd $DOTDOTDOT_ROOT"
