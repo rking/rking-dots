@@ -1,0 +1,26 @@
+# will refactor into
+try_vim_plugins() {
+    set -xe
+    local tmp=~/.try-tmp$$
+    local actual=~/.vim/plugin
+    [ -d $actual ]
+    mkdir $tmp
+    [ -d $tmp ]
+    mv $actual/* $tmp
+    local found_problem=0
+    for n in $tmp/*; do
+        local trial_file=${n#$tmp/}
+        mv $n $actual
+        [[ 0 == $found_problem ]] &&
+            "echo" "$cmd" && found_problem=1 || true
+    done
+    read
+    echo "mv $tmp/* $actual"
+    read
+    mv $tmp/* $actual
+    mv $tmp/* $actual
+    read
+    rmdir $tmp
+    read
+}
+# vim:ft=sh

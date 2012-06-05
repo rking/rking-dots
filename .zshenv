@@ -55,14 +55,6 @@ else
     locale -a
 fi
 
-if [[ -e ~/.zsh-git-prompt ]]; then
-    source ~/.zsh-git-prompt
-    PROMPT='$(git_super_status)%# '
-    RPROMPT='%B%m%~%b'
-else
-    echo "https://github.com/olivierverdier/zsh-git-prompt needed."
-fi
-
 [ -e /usr/lib/debug ] && export LD_LIBRARY_PATH=!:2:$LD_LIBRARY_PATH
 export HISTSIZE=100000 HISTFILE=~/.zsh_history SAVEHIST=100000
 alias dwdiff='dwdiff -c' # color

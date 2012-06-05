@@ -1,5 +1,3 @@
-" This can go in ~/.vim/ftplugin/perl.vim and vim will automatically source it
-
 " This should be the vim default, I think:
 au BufRead,BufNewFile *.t set ft=perl
 
@@ -24,9 +22,9 @@ map \gs :!grepsubs %<cr>
 " Run the debugger on the current file (great for .t files)
 map \D :up<cr>:!perl -d -Ilib %<cr>
 
-" Commenting/decommenting:
-map \# :s/^/#/g<cr>:noh<cr>
-map \$ :s/^#//g<cr>:noh<cr>
+" Ingy's got \# covered.
+" map \# :s/^/#/g<cr>:noh<cr>
+map \$ :s/^#\s?//g<cr>:noh<cr>
 
 " You're on your own for finding a mapping for this.  I prefer:
 " map <f3> :up<cr>:call RunLastT()<cr>
