@@ -1,0 +1,30 @@
+#!/bin/sh -xe
+## For relocating a binary + its deps. (Note: Highly experimental.)
+# TODO: create local-dots and move this there. (along with ...path-prepend
+# ~/local, etc.)
+[ $# = 1 ]
+full_path=`which $1`
+mkdir $1
+cd $1
+deps=0
+# TODO - find out if other systems use a different output format from `ldd`.
+for n in `ldd $full_path | awk '/=> \// { print $3 }'`; do
+    cp $n .
+    deps=1
+done
+if [ $deps = 0 ]; then
+    cd ..; rmdir $1
+    : Ha. There were no deps, it seems. Feel free to scp $full_path
+    exit 1
+fi
+cp $full_path _$1
+tee $1 <<EOT
+#!/bin/sh -xe
+packupdir=\`dirname \$0\`
+LD_LIBRARY_PATH=\$packupdir \$packupdir/_$1
+EOT
+chmod +x $1
+cd ..
+tar cvzf $1.tgz $1
+rm -r $1
+: Done. Now you can scp $1.tgz to your impoverished machine.
