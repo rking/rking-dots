@@ -1,0 +1,6 @@
+#!/bin/sh
+## Talks to ssh-agent to only have to type in ssh keyphrases once.
+type keychain 2>&1 > /dev/null &&
+    keychain -q ~/.ssh/*id_?sa &&
+    [ -e ~/.keychain/$HOST-sh-gpg ] && . ~/.keychain/$HOST-sh &&
+        [ -e ~/.keychain/$HOST-sh-gpg ] && . ~/.keychain/$HOST-sh-gpg
