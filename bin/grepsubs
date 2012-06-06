@@ -1,8 +1,0 @@
-#!/usr/bin/perl -nw
-use strict;
-# Blue is too dark for dark terminals:
-my @legiblecolors = qw(31 32 33    35 36);
-#sub colorhash { return $legiblecolors[length($_[0])%$#legiblecolors] }
-print if
-    s/^sub ([\w:]+)/    \033[35m$1\033[0m/
-    or s/^package ([\w:]+);/package \033[31m$1\033[0m/;
