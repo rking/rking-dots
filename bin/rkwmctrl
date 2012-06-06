@@ -1,10 +1,12 @@
 #!/usr/bin/env ruby
 EXE='wmctrl'
 behaviors = {
+  # TODO: Un-hardcode all of this.
     '1' => [ %w(-s 0), %w(-a codeterm) ],
     '2' => [ %w(-s 1), %w(-a Pentadactyl) ],
     '3' => [ %w(-s 2), %w(-a Thunderbird), %w(-a ingyterm) ],
     '4' => [ %w(-s 3) ],
+    '-80' => [ %w(-r codeterm -e 0,-1,-1,80,-1') ],
 }
 ARGV.each do |behavior|
     raise "No '#{behavior}' found. Try one of: #{behaviors.keys.join ', '}" \
