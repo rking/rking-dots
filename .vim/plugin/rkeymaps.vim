@@ -1,26 +1,26 @@
 au BufNewFile,BufRead *.t set ft=perl
 
-map \p :set paste<cr>
-map \v :!vim .vimrc<cr>:so .vimrc<cr>
-map \V :!vim ~/.vimrc<cr>:so ~/.vimrc<cr>
-map \vf :!vim <cword><cr>:so <cword><cr>
-map \gf :sp <cword><cr>
+map <leader>p :set paste<cr>
+map <leader>v :!vim .vimrc<cr>:so .vimrc<cr>
+map <leader>V :!vim ~/.vimrc<cr>:so ~/.vimrc<cr>
+map <leader>vf :!vim <cword><cr>:so <cword><cr>
+map <leader>gf :sp <cfile><cr>
 
-map \# :s/^/#/g<cr>:silent noh<cr>
-map \$ :s/^#//g<cr>:silent noh<cr>
+map <leader># :s/^/#/g<cr>:silent noh<cr>
+map <leader>$ :s/^#//g<cr>:silent noh<cr>
 
-map \1 :silent up<cr>
-map \2 :silent up<cr>:!perl -c -Ilib %<cr>
-map \3 :silent up<cr>:call RunLastT()<cr>
-map \4 :silent up<cr>:call MakeOrRakeOrWhatever()<cr>
-map \5 :silent up<cr>:call RunThis()<cr>
-map \6 :silent up<cr>:!make all install<cr>
-map \7 :silent call ToggleSecondLang()<cr>
+map <leader>1 :silent up<cr>
+map <leader>2 :silent up<cr>:!perl -c -Ilib %<cr>
+map <leader>3 :silent up<cr>:call RunLastT()<cr>
+map <leader>4 :silent up<cr>:call MakeOrRakeOrWhatever()<cr>
+map <leader>5 :silent up<cr>:call RunThis()<cr>
+map <leader>6 :silent up<cr>:!make all install<cr>
+map <leader>7 :silent call ToggleSecondLang()<cr>
 imap <f7> <esc>:call ToggleSecondLang()<cr>a
 
-map \d :.!echo -n 'date:    '; date<cr>
+map <leader>d :.!echo -n 'date:    '; date<cr>
 
-" Allow undo for Insert Mode ^u (thanks, osse!)
+" Allow undo for Insert Mode ^u (thanks, osse!) - see: :help i_CTRL-G_u
 inoremap <C-u> <C-g>u<C-u>
 
 func! MakeOrRakeOrWhatever()
