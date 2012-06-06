@@ -1,0 +1,7 @@
+# echo before .zshkeys: $PATH
+bindkey -v # vi keys
+bindkey "^P" vi-up-line-or-history
+bindkey "^N" vi-down-line-or-history
+autoload edit-command-line; zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
+bindkey "^[." insert-last-word # Alt+'.' gives !$'s value.
