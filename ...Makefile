@@ -1,6 +1,6 @@
 # This file is used by: http://github.com/ingydotnet/....git
 install:
-	make install
+	ln -fs ~/.../src/ls--/ls++ ~/bin/
 deps:
 	@/bin/echo -e "\e[36mTesting for dependant -dots\e[0m: "
 	[ -d $$DOTDOTDOT_ROOT/src/etcet-dots ]

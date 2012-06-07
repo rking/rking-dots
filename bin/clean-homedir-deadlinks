@@ -1,0 +1,8 @@
+#!/bin/sh -xe
+## Delete bad symlinks `~/bin/` and `~/.*`
+for n in ~/bin/* ~/.*; do
+    if [ -L $n -a ! -e $n ]; then
+        echo -e "\e[31mRemoving dead symlink: \e[1m$n\e[2m (was `readlink $n`)\e[0m"
+        rm $n
+    fi
+done

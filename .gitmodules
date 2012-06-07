@@ -1,9 +1,0 @@
-[submodule "xcompose"]
-	path = xcompose
-	url = git@github.com:ryanjosephking/xcompose.git
-[submodule "reval.vim"]
-	path = reval.vim
-	url = git@github.com:ryanjosephking/reval.vim
-[submodule "ls--"]
-	path = ls--
-	url = git@github.com:trapd00r/ls--.git
