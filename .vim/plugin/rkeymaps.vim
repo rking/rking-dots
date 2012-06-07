@@ -1,3 +1,6 @@
+" TODO - Organize & atomicize.
+" Also figure out what still has its deps.
+
 au BufNewFile,BufRead *.t set ft=perl
 
 map <leader>p :set paste<cr>
@@ -9,6 +12,7 @@ map <leader>gf :sp <cfile><cr>
 map <leader># :s/^/#/g<cr>:silent noh<cr>
 map <leader>$ :s/^#//g<cr>:silent noh<cr>
 
+" TODO - Acmeize the perlish bits.
 map <leader>1 :silent up<cr>
 map <leader>2 :silent up<cr>:!perl -c -Ilib %<cr>
 map <leader>3 :silent up<cr>:call RunLastT()<cr>

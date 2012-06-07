@@ -1,5 +1,6 @@
 syntax on
 
+" TODO - atomicize these.
 set incsearch ignorecase smartcase history=9999 ruler backspace=2
 set autoindent expandtab tabstop=8 shiftwidth=4 softtabstop=4
 set autoread autowrite nobackup exrc ttyfast viminfo='20,\"500
@@ -11,4 +12,6 @@ set notitle " was messing up wmctrl's ability to pick out a window.
 
 filetype plugin indent on
 
+" From :h line()
+" Restores cursor position on reopen.
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
