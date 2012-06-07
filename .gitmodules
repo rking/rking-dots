@@ -6,4 +6,4 @@
 	url = git@github.com:ryanjosephking/reval.vim
 [submodule "ls--"]
 	path = ls--
-	url = https://github.com/trapd00r/ls--/
+	url = git@github.com:trapd00r/ls--.git
