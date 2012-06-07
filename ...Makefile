@@ -6,7 +6,7 @@ deps:
 	[ -d $$DOTDOTDOT_ROOT/src/etcet-dots ]
 	[ -d $$DOTDOTDOT_ROOT/src/sane-dots ]
 	[ -d $$DOTDOTDOT_ROOT/src/vim-dots ]
-	[ -d $$DOTDOTDOT_ROOT/src/riby-dots ]
+	[ -d $$DOTDOTDOT_ROOT/src/ruby-dots ]
 	[ -d $$DOTDOTDOT_ROOT/src/perl-dots ]
 	[ -d $$DOTDOTDOT_ROOT/src/linux-dots ]
 	[ -d $$DOTDOTDOT_ROOT/src/zsh-git-prompt ]
