@@ -5,7 +5,9 @@
 cd() {
     builtin cd "$@"
     local lspp=~/.../src/ls--/ls++
-    [ -x $lspp ] && $lspp || true
+    [ -x $lspp ] && 
+        perl -MTerm::ExtendedColor -e 1 >/dev/null 2>&1 &&
+        $lspp || true
 }
 
 for n in mv cp man svn git; do alias $n="nocorrect $n"; done

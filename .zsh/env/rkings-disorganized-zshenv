@@ -1,4 +1,4 @@
-source ~/.localrc
+...sourceif ~/.localrc
 
 source ~/.../lib/path-manip # for path-prepend, etc.
 
