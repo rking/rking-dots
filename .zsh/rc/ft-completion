@@ -23,7 +23,12 @@ zstyle ':completion:*:manuals.(^1*)' insert-sections   true
 zstyle ':completion:*' menu select
 zstyle ':completion:*' verbose yes
 zstyle ':completion:*:-command-:*:' verbose no
-zstyle ':completion:*:*:(kill*|man):*' menu yes
+
+# This was pre-completing to "git-add" with "man git-<tab>".
+# Without it "man cront<tab>" doesn't fill in, because of the section
+# ambiguity. Not sure how to strike the perfect balance:
+#rjk# zstyle ':completion:*:*:(kill*|man):*' menu yes
+
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 zstyle ':completion:*:parameters' list-colors "=[^a-zA-Z]*=$color[red]"
