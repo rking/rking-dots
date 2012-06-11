@@ -1,32 +1,22 @@
 #!/bin/zsh
 
-# TODO: Pull these into their right *-dot places.
+# Not needed unless setopt CORRECT_ALL is on.
+# for n in mv cp man svn git; do alias $n="nocorrect $n"; done
 
-cd() {
-    builtin cd "$@"
-    local lspp=~/.../src/ls--/ls++
-    [ -x $lspp ] && 
-        perl -MTerm::ExtendedColor -e 1 >/dev/null 2>&1 &&
-        $lspp || true
-}
-
-for n in mv cp man svn git; do alias $n="nocorrect $n"; done
-
-# TODO
+# Hrm. Not sure how I want conceive to act these days.
 # conceive() { command conceive "$@"; rehash }
 
-showbanner() { [ -e .banner ] && cat .banner }
-gitcd() {
-    cd $1
-    showbanner
-    git pull
-    git status
-}
+# Might revive this one day.
+#showbanner() { [ -e .banner ] && cat .banner }
+#gitcd() {
+#    cd $1
+#    showbanner
+#    git pull
+#    git status
+#}
 
+# TODO: make linux-dots/bin/,i (and be local-dots-aware)
 emerge() { $EMERGE_MAYBE_SUDO emerge "$@"; rehash }
-alias euses='euses --colour'
-
-alias ls='ls --classify --color=auto'
 
 # I still kind of like this little feller.
 # alias standup='(echo -n "stand-up: "; randlist < ~/.st-haxors) | xclip'
@@ -34,13 +24,9 @@ alias ls='ls --classify --color=auto'
 # TODO
 # dict() { /usr/bin/dict -dall "$@" | less -F }
 
+# Kinda junky.
 s50() { convert -sample 50% $1 $1 }
 s75() { convert -sample 75% $1 $1 }
 
-alias cj=clipjoin
-alias cb=clipbrowse
-alias ce=clipedit
-
-# TODO
-source ~/., # run ,h for help
-
+# Kinda rking-specific.
+alias ,t='tmux-session shell'
