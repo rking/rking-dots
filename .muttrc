@@ -37,7 +37,6 @@ set charset=utf-8
 set send_charset=utf-8
 
 set ascii_chars # for the `--> stuff
-set postponed=+postponed
 set reply_to=ask-yes
 set ispell="aspell -e -c"
 set help=no
@@ -47,7 +46,6 @@ set pager_index_lines=4
 set delete=yes
 set sort=threads
 set confirmappend=no
-set record=+sent
 ignore *
 hdr_order date from newsgroups subject to cc
 unignore \
@@ -63,6 +61,7 @@ folder-hook spam push 'D.\n'
 # here.
 source `FILE=$HOME/.localmuttrc; if [ ! -s "$FILE" ]; then FILE=/dev/null;fi;echo "$FILE"`
 
+set record=+sent
+set postponed=+postponed
 # mailboxes `FOLDER=~/mail; find $FOLDER -type d -printf '%h\n' | grep -v $FOLDER/.spam$ | tr "\n" " "`
-
 
