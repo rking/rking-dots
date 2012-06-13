@@ -1,6 +1,12 @@
 #!/bin/sh
 ## Talks to ssh-agent to only have to type in ssh keyphrases once.
-type keychain 2>&1 > /dev/null &&
+echo -e "[\e[32mRunning keyup\e[0m]"
+if type keychain &> /dev/null; then
     keychain -q ~/.ssh/*id_?sa &&
     [ -e ~/.keychain/$HOST-sh-gpg ] && . ~/.keychain/$HOST-sh &&
         [ -e ~/.keychain/$HOST-sh-gpg ] && . ~/.keychain/$HOST-sh-gpg
+else
+    ps U$USER | grep ssh-agent &> /dev/null || eval `ssh-agent`
+    echo -e "  (Note: \e[33mInstall \`keychain\` for better handling.\e[0m)"
+    ssh-add
+fi
