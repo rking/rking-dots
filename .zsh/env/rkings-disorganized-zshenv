@@ -1,7 +1,5 @@
 ...sourceif ~/.localrc
 
-source ~/.../lib/path-manip # for path-prepend, etc.
-
 setopt \
     autocd \
     autolist \
@@ -29,7 +27,6 @@ setopt \
     equals \
     interactivecomments \
     nobadpattern \
-    printexitvalue \
 
 ulimit -c unlimited
 
@@ -47,7 +44,7 @@ which ccache 2>&1 > /dev/null && export CC='ccache gcc'
 
 FAV_ENCODING=${FAV_ENCODING:-en_US.utf8}
 if locale -a | grep -q $FAV_ENCODING; then
-    export LC_ALL=$FAV_ENCODING
+    export LANG=$FAV_ENCODING
 else
     echo "Favorite encoding, $FAV_ENCODING, unavailable. =(  Try 'export FAV_ENCODING=...' in your ~/.localrc using one of these:"
     locale -a
@@ -58,4 +55,3 @@ export HISTSIZE=100000 HISTFILE=~/.zsh_history SAVEHIST=100000
 alias dwdiff='dwdiff -c' # color
 eval $(dircolors)
 export ZLS_COLORS=$LS_COLORS
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
