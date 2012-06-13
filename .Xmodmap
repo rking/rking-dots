@@ -1,6 +1,8 @@
 keycode 108 = Alt_R
 keysym Alt_R = Multi_key
 
-keycode 66 = Control_L
-clear Lock
-add Control = Control_L
+!keycode 66 = Control_L
+!clear Lock
+
+remove lock = Caps_Lock
+add mod3 = Caps_Lock
