@@ -1,0 +1,16 @@
+#!/bin/bash
+## Talks to ssh-agent to only have to type in ssh keyphrases once.
+keyup() {
+    echo -e "[\e[36mRunning keyup\e[0m]"
+    if [ -z "$SSH_AGENT_PID" ]; then
+        echo -e " (\e[34mStarting ssh-agent \e[0m)"
+        eval `ssh-agent`
+    fi
+    echo -e "  …\e[1midentities\e[0m:"
+    for n in ~/.ssh/id{entity,_{d,ecd,r}sa}; do
+        if [ -e $n ] && ! ssh-add -L | grep -o "$n\$"; then
+            echo "ssh-adding $n"
+            ssh-add
+        fi
+    done
+}
