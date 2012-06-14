@@ -3,7 +3,7 @@
 keyup() {
     echo -e "[\e[36mRunning keyup\e[0m]"
     if [ -z "$SSH_AGENT_PID" ]; then
-        echo -e " (\e[34mStarting ssh-agent \e[0m)"
+        echo -e " (\e[34mStarting ssh-agent\e[0m)"
         eval `ssh-agent`
     fi
     echo -e "  …\e[1midentities\e[0m:"
