@@ -1,1 +1,8 @@
-keyup
+#!/bin/zsh
+if [ -n "$AUTO_KEYUP" ]; then
+    keyup
+else
+    if [ -n "$WANT_ALL" ]; then
+        echo "You probably want to set AUTO_KEYUP so zsh -l does ssh-add."
+    fi
+fi
