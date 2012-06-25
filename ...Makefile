@@ -1,8 +1,9 @@
 # This file is used by: http://github.com/ingydotnet/....git
-install:
+
+install: update
+update:
 	[ -d ~/bin ] || mkdir ~/bin
 	ln -fs ~/.../src/ls--/ls++ ~/bin/
-deps:
 	@/bin/echo -e "\e[36mTesting for dependant -dots\e[0m: "
 	[ -d ~/.../src/loop-dots ]
 	[ -d ~/.../src/sharp-dots ]
