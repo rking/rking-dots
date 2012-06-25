@@ -1,3 +1,3 @@
 #!/bin/sh
 ## Start a terminal to watch logs.
-urxvt -title codeterm -geometry 80x75+1400+1 -e abend-shell tmux-session logs
+urxvt -title logs -geometry 80x75+1400+1 -e abend-shell tmux-session logs &
