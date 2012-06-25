@@ -10,6 +10,8 @@ URxvt*secondaryWheel: true
 URxvt.perl-ext-common: default,selection-autotransform,matcher
 ! git diffs
 URxvt.selection-autotransform.0: s|^[ab]/||
+! tmux sub-screens (due to a `tmux a` from a smaller terminal):
+URxvt.selection-autotransform.1: s|\s*│·+$||g
 ! dies
 ! URxvt.selection-autotransform.1: s|:([0-9]+)(:(in)?)?$| +$1|
 
