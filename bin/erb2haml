@@ -1,5 +1,6 @@
 #!/bin/sh -xe
-gem install hpricot ruby_parser
+ruby -rhpricot -e 1 || gem install hpricot
+ruby -rruby_parser -e 1 || gem install ruby_parser
 for i in `find app/views/ -name '*.erb'`; do
     html2haml -e $i ${i%erb}haml
     rm $i
