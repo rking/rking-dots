@@ -1,3 +1,6 @@
+" Hooks into ingy's handy :wa<up> deal:
+map <f8> \]
+
 " TODO - Figure out what still has its deps.
 
 " TODO - Move to ../perl-dots
