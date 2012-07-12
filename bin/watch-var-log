@@ -1,4 +1,4 @@
 #!/bin/sh
-LOGS=`sudo file /var/log/* | egrep -v '(data|directory)$' |\
+LOGS=`sudo file /var/log/{,nginx}/* | egrep -v '(data|directory)$' |\
     cut -d: -f1 | egrep -v '\.(gz|old)$'`
 sudo tail -f $LOGS
