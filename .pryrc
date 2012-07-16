@@ -1,4 +1,6 @@
 # vim:ft=ruby
+Pry.config.theme = 'vim-detailed'
+
 def m o; o.methods.sort - Object.methods end
 
 # Follow pry-doc further, e.g.:
