@@ -7,6 +7,7 @@ keyup() {
     export SSH_AUTH_SOCK=~/.ssh-auth-sock
     if ! ps -U $USER | grep ssh-agent; then
         echo -e " (\e[34mStarting ssh-agent\e[0m)"
+        rm $SSH_AUTH_SOCK # or else it won't bind after a kill
         eval `ssh-agent -a $SSH_AUTH_SOCK`
     fi
     echo -e "  …\e[1midentities\e[0m:"
