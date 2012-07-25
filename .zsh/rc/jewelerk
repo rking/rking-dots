@@ -1,0 +1,11 @@
+jewelerk() {
+    USER_NAME=sharpsaw \
+        USER_EMAIL=$1@sharpsaw.org \
+        GITHUB_USERNAME=rking \
+        GIT_REMOTE=git@github.com:rking/$1.git \
+      jeweler \
+        --rspec --yard \
+        --bundler \
+        --create-repo \
+        "$@" && cd $1
+}
