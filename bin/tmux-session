@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -x
 # Start or reattach to a session, using ~/.$1-tmux.conf
 THISSERV="tmux -2 -L $1"
 CONFFILE=~/.$1-tmux.conf
@@ -8,10 +8,12 @@ CONFFILE=~/.$1-tmux.conf
 unset TMUX # Big-boy mode: allows running even if nested. (Which easily occurs
            # if you start one terminal from another.)
 
-$THISSERV list-sessions || \
+if $THISSERV list-sessions; then
+    $THISSERV attach
+else
     $THISSERV -f $CONFFILE \
         start-server\; \
         source-file ~/.tmux.conf\; \
-        rename-session $1
-
-$THISSERV new-session -t $1
+        rename-session $1\; \
+        attach
+fi
