@@ -1,0 +1,2 @@
+# Plays into 1337-dots's .tmux.conf
+WANT_TMUX_TO_HAVE_ALT_PLUS_NUM=1
