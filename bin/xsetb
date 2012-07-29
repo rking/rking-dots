@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
-# Set the system beep from X. Currently only randomizes from bassy G pentatonic.
-# encoding: UTF-8 # TODO - fix rvm to use 1.9.3
+# encoding: utf-8
+## Set the system beep from X. Currently only randomizes from bassy G pentatonic.
 ARGV[0] != '-r' and raise "Only randomize supported at the moment."
 palate = {
     G: 46.25,
