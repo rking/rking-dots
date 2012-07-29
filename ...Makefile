@@ -13,6 +13,7 @@ update:
 	[ -d ~/.../src/ruby-dots ]
 	[ -d ~/.../src/perl-dots ]
 	[ -d ~/.../src/linux-dots ]
+	[ -d ~/.../src/unicode-dots ]
 	[ -d ~/.../src/zsh-git-prompt ]
 	[ -d ~/.../src/git-dots ]
 	[ -d ~/.../src/ls-- ]
