@@ -1,20 +1,5 @@
-#!/bin/bash
-## Talks to ssh-agent to only have to type in ssh keyphrases once.
 keyup() {
-    echo -e "[\e[36mRunning keyup\e[0m]"
-
-    # In a single, consistent place:
-    export SSH_AUTH_SOCK=~/.ssh-auth-sock
-    if ! ps -U $USER | grep ssh-agent; then
-        echo -e " (\e[34mStarting ssh-agent\e[0m)"
-        rm $SSH_AUTH_SOCK # or else it won't bind after a kill
-        eval `ssh-agent -a $SSH_AUTH_SOCK`
-    fi
-    echo -e "  …\e[1midentities\e[0m:"
-    for n in ~/.ssh/id{entity,_{d,ecd,r}sa}; do
-        if [ -e $n ] && ! ssh-add -L | grep -o "$n\$"; then
-            echo "ssh-adding $n"
-            ssh-add
-        fi
-    done
+    keychain -q && echo -e '\e[36mkeychain\e[0med.' ||
+        echo "keychain not found (can be installed as a distro pkg or in ~/bin)"
 }
+# vim:ft=sh
