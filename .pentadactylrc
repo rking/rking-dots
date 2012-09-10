@@ -1,4 +1,4 @@
-"1.0rc2pre-hg6802-default
+"1.0
 
 loadplugins '\.(js|penta)$'
 group user
@@ -10,5 +10,6 @@ set findflags=r
 set guioptions=bCrsnc
 set hintkeys=qwertyuipasdfghjklzxcvnm
 set passkeys=duckduckgo.com:jk<cr>,mail.google.com:jkroae<cr>
+set strictfocus='chrome:*':laissez-faire,*:despotic
 
 " vim: set ft=pentadactyl:
