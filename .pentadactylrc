@@ -1,11 +1,11 @@
-"1.0rc2pre-hg6802-default
+"1.0rc2pre
 
 loadplugins '\.(js|penta)$'
 group user
 map -count -modes=n,v <F2> <count>:dia<Space>pageinfo<Return>
 map -count -modes=n,v <F3> <count>:styletoggle<Space>-group<Space>user<Return>
 map -modes=n,v <C-F5> -ex :rel|viewsource
-set defsearch=duckduckgo-http
+set defsearch=duck-duck-go-google-suggest
 set findflags=r
 set guioptions=bCrsnc
 set hintkeys=qwertyuipasdfghjklzxcvnm
