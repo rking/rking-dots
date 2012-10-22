@@ -1,0 +1,17 @@
+#!/bin/sh -xe
+if [ $# -gt 0 ]; then
+    [ $1 = e ] && vim ~/.asoundrc
+    [ $1 = R ] && sudo rmmod $(sudo lsmod  | awk '/snd/{print $1}')
+    [ $1 = M ] && sudoedit /etc/modprobe.d/alsa.conf
+fi
+
+: For uploading config:
+:   alsa-info
+: Card details:
+:   sudo lspci -vvv \| grep Audio -A99
+: Module options:
+:   sudo modinfo -p snd-usb-audio
+:   sudo modinfo snd-usb-audio
+
+aplay -l
+aplay $(locate \*Front\*.wav|head -n1)
