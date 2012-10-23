@@ -7,7 +7,9 @@ for i in range(char2nr(' '), char2nr('~'))
     let c = '\\|'
   endif
   if '[' != c " '[' is part of ANSI escape sequences
-    exec 'map <esc>'.c.' <m-'.c.'>'
+    if 'o' != c " 'o' is also part of F1–F4s' escape sequences
+      exec 'map <esc>'.c.' <m-'.c.'>'
+    end
   end
 endfor
 
