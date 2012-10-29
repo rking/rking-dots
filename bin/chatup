@@ -1,0 +1,6 @@
+#!/bin/sh -xe
+: Using rking chatup
+[ -n "$1" ]
+IRC_SERVER=${CHATUP_SERVER:-irc.freenode.org}
+CHANNELS=${CHATUP_CHANNELS:-#pairup}
+tmux split-window "HOME=~/tmp weechat-curses irc://$1@$IRC_SERVER//$CHANNELS"
