@@ -1,0 +1,3 @@
+[submodule "reval.vim"]
+	path = reval.vim
+	url = https://github.com/ryanjosephking/reval.vim
