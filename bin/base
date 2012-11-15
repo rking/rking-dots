@@ -1,6 +1,0 @@
-#!/usr/bin/perl -w
-use strict;
-use Expect;
-my $x = Expect->spawn('bc', '-l');
-$x->send("ibase=$ARGV[1]\nobase=$ARGV[3]");
-$x->interact;

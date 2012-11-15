@@ -1,4 +1,0 @@
-#!/bin/sh
-# Echo the arguments to the xterm title.
-# This doesn't work under tmux, it seems.
-#echo -ne "\ek$@\e\\"

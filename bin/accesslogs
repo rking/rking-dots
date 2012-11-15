@@ -1,3 +1,0 @@
-#!/bin/bash
-# Watch the HTTP hits, in color.
-colorizelogs /var/log/apache*/*access.log

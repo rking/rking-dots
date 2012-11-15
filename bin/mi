@@ -1,3 +1,0 @@
-#!/bin/sh
-# Defined by source: make all install && rm -f Makefile.old
-make all install && rm -f Makefile.old

@@ -1,3 +1,0 @@
-#!/bin/sh
-## Start a terminal on the left, used for an ssh connection and such.
-urxvt -title sshellterm -geometry 80x63+0+1 -e abend-shell tmux-session sshell &

@@ -1,2 +1,0 @@
-#!/bin/sh
-grep -rs "$@" /dev/null | grep -v '\.svn/' | grep -v blib

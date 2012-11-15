@@ -1,3 +1,0 @@
-#!/bin/sh
-# Ssh somewhere then invoke maybe-screen -x (connect if previous screen exists)
-ssh -t "$@" maybe-screen -x

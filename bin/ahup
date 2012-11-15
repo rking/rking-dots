@@ -1,6 +1,0 @@
-#!/bin/sh
-# Restart dev apaches
-LOG=~/logs/nlw-error.log
-echo "Hupping..." >> $LOG
-killall -HUP apache 2>&1 | grep -v Operation\ not
-exit 0 # because of the Operation not's.
