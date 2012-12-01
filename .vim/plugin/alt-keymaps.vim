@@ -8,7 +8,9 @@ for i in range(char2nr(' '), char2nr('~'))
   endif
   if '[' != c " '[' is part of ANSI escape sequences
     if 'o' != c " 'o' is also part of F1–F4s' escape sequences
-      exec 'map <esc>'.c.' <m-'.c.'>'
+      if 'q' != c " Meta-Shift-q is too easy to hit when trying for M-S-w
+        exec 'map <esc>'.c.' <m-'.c.'>'
+      end
     end
   end
 endfor
