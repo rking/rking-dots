@@ -1,0 +1,10 @@
+#!/bin/sh -xe
+: tmux check; [ -n "$TMUX" ] || exit 1
+top=~/.../src/vim-dots
+cd $top
+# asdf
+cd .vim/bundle/vim-detailed
+$SHELL
+cd $top
+gq
+$SHELL
