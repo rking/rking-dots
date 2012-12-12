@@ -1,7 +1,8 @@
 #!/bin/sh -xe
 if [ $# -gt 0 ]; then
     [ $1 = e ] && vim ~/.asoundrc
-    [ $1 = R ] && sudo rmmod $(sudo lsmod  | awk '/snd/{print $1}')
+    [ $1 = R ] && sudo rmmod $(sudo lsmod  | awk '/snd_usb/{print $1}')
+    [ $1 = RR ] && sudo rmmod $(sudo lsmod  | awk '/snd/{print $1}')
     [ $1 = M ] && sudoedit /etc/modprobe.d/alsa.conf
 fi
 
