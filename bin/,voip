@@ -1,0 +1,4 @@
+#!/bin/sh -xe
+jackd -d alsa -d hw:1 &
+ekiga &
+skype &
