@@ -1,8 +1,6 @@
-" if !has('conceal')
-"     finish
-" endif
-" 
-" syntax keyword rubyControl not conceal cchar=¬
-" syntax keyword rubyKeyword lambda conceal cchar=λ
-" 
-" set conceallevel=2
+if !has('conceal')
+  echo "Wow, this is an old vim, according to ~/.vim/plugin/conceal.vim"
+  finish
+endif
+set conceallevel=2
+au Syntax ruby syntax match rubyOperator '<<' conceal cchar=«
