@@ -3,4 +3,4 @@ if !has('conceal')
   finish
 endif
 set conceallevel=2
-au Syntax ruby syntax match rubyOperator '<<' conceal cchar=«
+"au Syntax ruby syntax match rubyOperator '<<' conceal cchar=«
