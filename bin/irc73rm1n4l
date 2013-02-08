@@ -1,0 +1,2 @@
+#!/bin/zsh
+urxvt -name irc -e irc &|
