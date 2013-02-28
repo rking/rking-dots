@@ -1,22 +1,3 @@
-
-" TODO figure out if this deserves promotion to 1337-dots.
-" (Thanks to https://github.com/MarcWeber/vim-addon-other/)
-for i in range(char2nr(' '), char2nr('~'))
-  let c = nr2char(i)
-  if '|' == c
-    let c = '\\|'
-  endif
-  if '[' != c " '[' is part of ANSI escape sequences
-    if 'o' != c " 'o' is also part of F1–F4s' escape sequences
-      if 'q' != c " Meta-Shift-q is too easy to hit when trying for M-S-w
-        if 'd' != c " Does nothing, and also frustrates ingy
-          exec 'map <esc>'.c.' <m-'.c.'>'
-        end
-      end
-    end
-  end
-endfor
-
 " Quick windowing with Alt+Shift+<char>
 for i in split('hjklfinqc_+', '.\zs')
   exec 'map <m-s-'.i.'> <c-w>'.i
