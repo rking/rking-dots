@@ -1,2 +1,3 @@
 #!/bin/zsh
-urxvt -name irc -e irc &|
+wmctrl -s2 || true
+urxvt -name irc -e irc "$@" &|
