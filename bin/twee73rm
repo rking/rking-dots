@@ -1,0 +1,3 @@
+#!/bin/zsh
+wmctrl -s3 || true
+urxvt -name tweemux -e tweemux host "$@" &|
