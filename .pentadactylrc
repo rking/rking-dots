@@ -8,6 +8,7 @@ map -count -modes=n,v <F3> <count>:styletoggle<Space>-group<Space>user<Return>
 map -modes=n,v h -ex back
 map -modes=n,v l -ex forward
 set defsearch=duck-duck-go-google-suggest
+set editor='~/bin/penta-vim -f +<line> +"sil! call cursor(0, <column>)" <file>'
 set findflags=r
 set guioptions=bCrsnc
 set hintkeys=qwertyuipasdfghjklzxcvnm
