@@ -1,3 +1,6 @@
 [submodule "reval.vim"]
 	path = reval.vim
 	url = https://github.com/ryanjosephking/reval.vim
+[submodule ".vim/bundle/joy"]
+	path = .vim/bundle/joy
+	url = git@github.com:rking/vim-joy

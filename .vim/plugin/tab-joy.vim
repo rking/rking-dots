@@ -1,1 +1,1 @@
-imap <tab> <esc>
+" imap <tab> <esc>
