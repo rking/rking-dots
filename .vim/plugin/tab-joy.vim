@@ -1,1 +1,1 @@
-" imap <tab> <esc>
+let g:pure_joy = 1
