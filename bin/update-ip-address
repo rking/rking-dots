@@ -1,0 +1,18 @@
+require "httparty"
+
+def update_ip_address new_ip
+  response = HTTParty.put("https://dnsimple.com/domains/#{config.fetch(:domain)}/records/#{config.fetch(:record)}", {
+    :headers => {
+      "X-DNSimple-Token" => "#{config.fetch(:email)}:#{config.fetch(:token)}",
+      "Accept"           => "application/json"
+    },
+    :body => { :record => {:content => new_ip, :ttl => 60} }
+  })
+  raise response.parsed_response unless response.code == 200
+end
+
+def current_ip_address
+  HTTParty.get("http://ifconfig.me/ip").body
+end
+
+update_ip_address(current_ip_address)
