@@ -4,3 +4,6 @@
 [submodule ".vim/bundle/joy"]
 	path = .vim/bundle/joy
 	url = git@github.com:rking/vim-joy
+[submodule ".vim/bundle/csv"]
+	path = .vim/bundle/csv
+	url = https://github.com/chrisbra/csv.vim
