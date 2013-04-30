@@ -1,0 +1,4 @@
+#!/bin/sh -xe
+echo 'tmux set -g status off'
+echo 'RPROMPT= c-j'
+,tf 44 -e ,t "$@"
