@@ -1,0 +1,9 @@
+#!/bin/sh -xe
+cat <<EOT
+Definitely: invert colors
+Maybe: tmux set -g status off
+Probably: RPROMPT=
+Hopefully: set cursor size to large?
+EOT
+
+,tf 44
